@@ -3,531 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SkillMaster SEA Market Research Survey</title>
+<title>SEA Enterprise AI Transformation Survey</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --teal-50: #E1F5EE;
-    --teal-100: #9FE1CB;
-    --teal-200: #5DCAA5;
-    --teal-600: #0F6E56;
-    --teal-800: #085041;
-    --teal-900: #04342C;
-    --gray-50: #F1EFE8;
-    --gray-100: #D3D1C7;
-    --gray-200: #B4B2A9;
-    --gray-600: #5F5E5A;
-    --gray-800: #444441;
-    --gray-900: #2C2C2A;
-    --amber-50: #FAEEDA;
-    --amber-400: #BA7517;
-    --blue-50: #E6F1FB;
-    --blue-600: #185FA5;
-    --bg: #FAFAF8;
-    --card: #FFFFFF;
-    --border: rgba(0,0,0,0.09);
-    --text: #1a1a18;
-    --muted: #6B6B67;
-    --accent: #0F6E56;
-    --accent-light: #E1F5EE;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 0;
-  }
-
-  /* Hero */
-  .hero {
-    background: var(--teal-900);
-    color: white;
-    padding: 64px 40px 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -80px;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.04);
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -60px;
-    width: 240px; height: 240px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
-  }
-  .hero-tag {
-    display: inline-block;
-    background: rgba(255,255,255,0.12);
-    color: var(--teal-100);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-    font-weight: 500;
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(26px, 4vw, 40px);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    color: white;
-  }
-  .hero h1 em { font-style: italic; color: var(--teal-200); }
-  .hero-sub {
-    font-size: 15px;
-    color: rgba(255,255,255,0.65);
-    max-width: 480px;
-    margin: 0 auto 28px;
-    line-height: 1.65;
-  }
-  .hero-meta {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .hero-meta span {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .hero-meta span::before { content: '—'; opacity: 0.4; }
-
-  /* Layout */
-  .survey-body {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-
-  /* Part heading */
-  .part-heading {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 48px 0 24px;
-  }
-  .part-heading:first-child { margin-top: 0; }
-  .part-num {
-    flex-shrink: 0;
-    width: 36px; height: 36px;
-    background: var(--teal-900);
-    color: white;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .part-heading h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--text);
-  }
-  .part-heading h2 span {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--muted);
-    margin-top: 2px;
-    font-style: normal;
-  }
-  .part-divider {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* Question card */
-  .q-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px 32px;
-    margin-bottom: 16px;
-  }
-  .q-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .q-text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.55;
-    color: var(--text);
-    margin-bottom: 20px;
-  }
-  .q-hint {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: -14px;
-    margin-bottom: 16px;
-    font-style: italic;
-  }
-
-  /* Options */
-  .options { display: flex; flex-direction: column; gap: 8px; }
-  .option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 11px 16px;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
-    background: var(--bg);
-  }
-  .option:hover { border-color: var(--teal-200); background: var(--teal-50); }
-  .option.selected {
-    border-color: var(--accent);
-    background: var(--accent-light);
-  }
-  .option-box {
-    width: 18px; height: 18px;
-    border: 1.5px solid var(--gray-200);
-    border-radius: 5px;
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.15s;
-    background: white;
-  }
-  .option.selected .option-box {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-  .option.selected .option-box::after {
-    content: '';
-    width: 5px; height: 9px;
-    border: 2px solid white;
-    border-top: none; border-left: none;
-    transform: rotate(45deg) translateY(-1px);
-    display: block;
-  }
-  .radio .option-box { border-radius: 50%; }
-  .radio .option.selected .option-box::after {
-    width: 6px; height: 6px;
-    border: none;
-    background: white;
-    border-radius: 50%;
-    transform: none;
-  }
-  .option-text { font-size: 14px; color: var(--text); }
-  .option-text-cn { font-size: 11px; color: var(--muted); display: block; }
-
-  /* Other input */
-  .other-input {
-    margin-top: 4px;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    width: 100%;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--text);
-    background: var(--bg);
-    display: none;
-  }
-  .other-input:focus { outline: none; border-color: var(--accent); }
-
-  /* Textarea */
-  textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--text);
-    background: var(--bg);
-    resize: vertical;
-    min-height: 100px;
-    line-height: 1.6;
-    transition: border 0.15s;
-  }
-  textarea:focus { outline: none; border-color: var(--accent); }
-
-  /* Text input */
-  input[type="text"] {
-    width: 100%;
-    padding: 11px 14px;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--text);
-    background: var(--bg);
-    transition: border 0.15s;
-    margin-bottom: 10px;
-  }
-  input[type="text"]:focus { outline: none; border-color: var(--accent); }
-  .input-label {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 5px;
-    display: block;
-  }
-
-  /* Rating table */
-  .rating-table { width: 100%; border-collapse: collapse; }
-  .rating-table th {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--muted);
-    padding: 6px 8px;
-    text-align: center;
-  }
-  .rating-table th:first-child { text-align: left; }
-  .rating-table tr:not(:last-child) td { border-bottom: 1px solid var(--border); }
-  .rating-table td {
-    padding: 12px 8px;
-    font-size: 14px;
-    color: var(--text);
-    vertical-align: middle;
-  }
-  .rating-table td:first-child { min-width: 160px; }
-  .rating-cell { text-align: center; }
-  .rating-radio {
-    width: 22px; height: 22px;
-    border: 1.5px solid var(--gray-200);
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 0 auto;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.15s;
-  }
-  .rating-radio:hover { border-color: var(--teal-200); }
-  .rating-radio.selected { background: var(--accent); border-color: var(--accent); }
-  .rating-radio.selected::after {
-    content: '';
-    width: 7px; height: 7px;
-    background: white;
-    border-radius: 50%;
-  }
-
-  /* Budget section */
-  .budget-section { margin-bottom: 20px; }
-  .budget-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* Contact section */
-  .contact-card {
-    background: var(--teal-900);
-    color: white;
-    border-radius: 14px;
-    padding: 32px;
-    margin-bottom: 16px;
-  }
-  .contact-card h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 6px;
-  }
-  .contact-card p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 24px;
-    line-height: 1.6;
-  }
-  .contact-card input[type="text"] {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    margin-bottom: 10px;
-  }
-  .contact-card input[type="text"]::placeholder { color: rgba(255,255,255,0.35); }
-  .contact-card input[type="text"]:focus { border-color: var(--teal-200); background: rgba(255,255,255,0.15); }
-  .contact-card .input-label { color: rgba(255,255,255,0.55); }
-
-  /* Submit */
-  .submit-wrap {
-    text-align: center;
-    padding: 32px 0 0;
-  }
-  .submit-btn {
-    background: var(--teal-900);
-    color: white;
-    border: none;
-    padding: 16px 48px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.02em;
-  }
-  .submit-btn:hover { background: var(--teal-800); transform: translateY(-1px); }
-  .submit-btn:active { transform: scale(0.98); }
-  .submit-note {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 14px;
-    line-height: 1.6;
-  }
-
-  /* Progress */
-  .progress-bar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: white;
-    border-bottom: 1px solid var(--border);
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .progress-track {
-    flex: 1;
-    height: 4px;
-    background: var(--gray-100);
-    border-radius: 100px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 100px;
-    transition: width 0.4s ease;
-    width: 0%;
-  }
-  .progress-label {
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-    min-width: 60px;
-    text-align: right;
-  }
-
-  /* Success */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 80px 24px;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-  .success-icon {
-    width: 72px; height: 72px;
-    background: var(--teal-50);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px;
-    font-size: 32px;
-  }
-  .success-screen h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
-  .success-screen p { font-size: 15px; color: var(--muted); line-height: 1.65; }
-
-  @media (max-width: 600px) {
-    .hero { padding: 48px 24px 40px; }
-    .q-card { padding: 20px; }
-    .rating-table td:first-child { font-size: 13px; min-width: 120px; }
-    .contact-card { padding: 24px 20px; }
-  }
+  :root{--teal-50:#E1F5EE;--teal-100:#9FE1CB;--teal-200:#5DCAA5;--teal-600:#0F6E56;--teal-800:#085041;--teal-900:#04342C;--bg:#FAFAF8;--card:#FFFFFF;--border:rgba(0,0,0,0.09);--text:#1a1a18;--muted:#6B6B67;--accent:#0F6E56;--accent-light:#E1F5EE;--gray-100:#D3D1C7;--gray-200:#B4B2A9;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  .hero{background:var(--teal-900);color:white;padding:64px 40px 56px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-60px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.04);}
+  .hero::after{content:'';position:absolute;bottom:-80px;left:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.03);}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,0.12);color:var(--teal-100);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;font-weight:500;}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(24px,4vw,40px);font-weight:400;line-height:1.2;margin-bottom:12px;}
+  .hero h1 em{font-style:italic;color:var(--teal-200);}
+  .hero-sub{font-size:14px;color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto 28px;line-height:1.75;}
+  .hero-meta{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
+  .hero-meta span{font-size:13px;color:rgba(255,255,255,0.45);}
+  .hero-meta span::before{content:'— ';}
+  .progress-bar{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--border);padding:10px 24px;display:flex;align-items:center;gap:14px;}
+  .progress-track{flex:1;height:4px;background:var(--gray-100);border-radius:100px;overflow:hidden;}
+  .progress-fill{height:100%;background:var(--accent);border-radius:100px;transition:width 0.4s ease;width:0%;}
+  .progress-label{font-size:12px;color:var(--muted);white-space:nowrap;min-width:64px;text-align:right;}
+  .survey-body{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+  .part-heading{display:flex;align-items:center;gap:16px;margin:48px 0 24px;}
+  .part-heading:first-child{margin-top:0;}
+  .part-num{flex-shrink:0;width:36px;height:36px;background:var(--teal-900);color:white;font-size:13px;font-weight:500;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .part-heading h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;}
+  .part-heading h2 span{display:block;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:400;color:var(--muted);margin-top:2px;}
+  .part-divider{flex:1;height:1px;background:var(--border);}
+  .q-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin-bottom:16px;}
+  .q-label{font-size:13px;font-weight:500;color:var(--accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;}
+  .q-text{font-size:16px;line-height:1.55;color:var(--text);margin-bottom:20px;}
+  .q-cn{font-size:13px;color:var(--muted);display:block;margin-top:4px;}
+  .q-tag{font-size:12px;color:var(--accent);font-style:italic;margin-left:4px;}
+  .q-hint{font-size:12px;color:var(--muted);margin-top:-14px;margin-bottom:16px;font-style:italic;}
+  .options{display:flex;flex-direction:column;gap:8px;}
+  .option{display:flex;align-items:center;gap:12px;padding:11px 16px;border:1px solid var(--border);border-radius:9px;cursor:pointer;transition:all 0.15s;user-select:none;background:var(--bg);}
+  .option:hover{border-color:var(--teal-200);background:var(--teal-50);}
+  .option.selected{border-color:var(--accent);background:var(--accent-light);}
+  .option-box{width:18px;height:18px;border:1.5px solid var(--gray-200);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s;background:white;}
+  .option.selected .option-box{background:var(--accent);border-color:var(--accent);}
+  .option.selected .option-box::after{content:'';width:5px;height:9px;border:2px solid white;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);display:block;}
+  .radio .option-box{border-radius:50%;}
+  .radio .option.selected .option-box::after{width:6px;height:6px;border:none;background:white;border-radius:50%;transform:none;}
+  .option-text{font-size:14px;color:var(--text);}
+  .option-cn{font-size:11px;color:var(--muted);display:block;}
+  .other-input{margin-top:4px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;width:100%;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--bg);display:none;}
+  .other-input:focus{outline:none;border-color:var(--accent);}
+  textarea{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--bg);resize:vertical;min-height:100px;line-height:1.6;transition:border 0.15s;}
+  textarea:focus{outline:none;border-color:var(--accent);}
+  input[type="text"]{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--bg);transition:border 0.15s;margin-bottom:10px;}
+  input[type="text"]:focus{outline:none;border-color:var(--accent);}
+  .input-label{font-size:12px;color:var(--muted);margin-bottom:5px;display:block;}
+  .rating-table{width:100%;border-collapse:collapse;}
+  .rating-table th{font-size:12px;font-weight:500;color:var(--muted);padding:6px 8px;text-align:center;}
+  .rating-table th:first-child{text-align:left;}
+  .rating-table tr:not(:last-child) td{border-bottom:1px solid var(--border);}
+  .rating-table td{padding:11px 8px;font-size:13px;color:var(--text);vertical-align:middle;}
+  .rating-table td:first-child{min-width:150px;padding-right:12px;}
+  .rating-cell{text-align:center;}
+  .rating-radio{width:22px;height:22px;border:1.5px solid var(--gray-200);border-radius:50%;cursor:pointer;margin:0 auto;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+  .rating-radio:hover{border-color:var(--teal-200);}
+  .rating-radio.selected{background:var(--accent);border-color:var(--accent);}
+  .rating-radio.selected::after{content:'';width:7px;height:7px;background:white;border-radius:50%;}
+  .contact-card{background:var(--teal-900);color:white;border-radius:14px;padding:32px;margin-bottom:16px;}
+  .contact-card h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:6px;}
+  .contact-card p{font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:24px;line-height:1.65;}
+  .contact-card input[type="text"]{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;margin-bottom:10px;}
+  .contact-card input[type="text"]::placeholder{color:rgba(255,255,255,0.35);}
+  .contact-card input[type="text"]:focus{border-color:var(--teal-200);background:rgba(255,255,255,0.15);}
+  .contact-card .input-label{color:rgba(255,255,255,0.55);}
+  .submit-wrap{text-align:center;padding:32px 0 0;}
+  .submit-btn{background:var(--teal-900);color:white;border:none;padding:16px 48px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;border-radius:100px;cursor:pointer;transition:all 0.2s;letter-spacing:0.02em;}
+  .submit-btn:hover{background:var(--teal-800);transform:translateY(-1px);}
+  .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+  .submit-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.6;}
+  .success-screen{display:none;text-align:center;padding:80px 24px;max-width:480px;margin:0 auto;}
+  .success-icon{width:72px;height:72px;background:var(--teal-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;}
+  .success-screen h2{font-family:'DM Serif Display',serif;font-size:28px;font-weight:400;margin-bottom:12px;}
+  .success-screen p{font-size:15px;color:var(--muted);line-height:1.65;}
+  @media(max-width:600px){.hero{padding:48px 24px 40px;}.q-card{padding:20px;}.rating-table td:first-child{font-size:12px;min-width:90px;}}
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div class="hero-tag">Market Research · Singapore & Malaysia</div>
-  <h1>SkillMaster <em>Enterprise AI</em><br>Survey 2025</h1>
-  <p class="hero-sub">Help us understand your company's needs in AI, document management, and workflow automation.</p>
+  <h1>Southeast Asia<br><em>Enterprise AI Transformation</em> Survey</h1>
+  <p class="hero-sub">We are conducting market research on enterprise AI transformation and intelligent upgrades across Singapore and Malaysia, covering AI adoption &amp; digital operations, enterprise management &amp; collaboration efficiency, and data security &amp; system intelligence.<br><br>This survey aims to better understand the real-world challenges and core pain points enterprises face in their AI transformation journey, and explore how AI can more effectively drive operational efficiency and intelligent upgrades.
   <div class="hero-meta">
     <span>10–15 minutes</span>
     <span>Confidential</span>
-    <span>27 questions</span>
+    <span>30 questions</span>
   </div>
 </div>
 
 <div class="progress-bar">
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <div class="progress-label" id="progressLabel">0 / 27</div>
+  <div class="progress-label" id="progressLabel">0 / 30</div>
 </div>
 
 <div class="survey-body" id="surveyBody">
 
-  <!-- Part 1 -->
-  <div class="part-heading">
-    <div class="part-num">1</div>
-    <h2>Company Profile <span>企业基础信息</span></h2>
-    <div class="part-divider"></div>
-  </div>
+  <div class="part-heading"><div class="part-num">1</div><h2>Company Profile <span>企业基础信息</span></h2><div class="part-divider"></div></div>
 
   <div class="q-card">
     <div class="q-label">Q1</div>
-    <div class="q-text">Where is your company located?<br><span style="font-size:13px;color:var(--muted)">您的企业所在国家/地区是？</span></div>
+    <div class="q-text">Where is your company located?<span class="q-cn">您的企业所在国家/地区是？</span></div>
     <div class="options radio" data-q="1" data-type="single">
-      <div class="option" data-val="Singapore">
-        <div class="option-box"></div>
-        <div class="option-text">Singapore <span class="option-text-cn">新加坡</span></div>
-      </div>
-      <div class="option" data-val="Malaysia">
-        <div class="option-box"></div>
-        <div class="option-text">Malaysia <span class="option-text-cn">马来西亚</span></div>
-      </div>
-      <div class="option" data-val="Others">
-        <div class="option-box"></div>
-        <div class="option-text">Others <span class="option-text-cn">其他</span></div>
-      </div>
+      <div class="option" data-val="Singapore"><div class="option-box"></div><div class="option-text">Singapore <span class="option-cn">新加坡</span></div></div>
+      <div class="option" data-val="Malaysia"><div class="option-box"></div><div class="option-text">Malaysia <span class="option-cn">马来西亚</span></div></div>
+      <div class="option" data-val="Others" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
     </div>
+    <input type="text" class="other-input" id="other-1" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q2</div>
-    <div class="q-text">What industry is your company in? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">您所在企业的行业属于？（可多选）</span></div>
+    <div class="q-text">What industry is your company in? <span class="q-tag">(Select all that apply)</span><span class="q-cn">您所在企业的行业属于？（可多选）</span></div>
     <div class="options" data-q="2" data-type="multi">
-      <div class="option" data-val="Manufacturing"><div class="option-box"></div><div class="option-text">Manufacturing <span class="option-text-cn">制造业</span></div></div>
-      <div class="option" data-val="Trading"><div class="option-box"></div><div class="option-text">Trading / Import & Export <span class="option-text-cn">贸易/进出口</span></div></div>
-      <div class="option" data-val="Logistics"><div class="option-box"></div><div class="option-text">Logistics / Supply Chain <span class="option-text-cn">物流/供应链</span></div></div>
-      <div class="option" data-val="Finance"><div class="option-box"></div><div class="option-text">Finance / Accounting Services <span class="option-text-cn">财务/会计服务</span></div></div>
-      <div class="option" data-val="Healthcare"><div class="option-box"></div><div class="option-text">Healthcare / Clinics <span class="option-text-cn">医疗/诊所</span></div></div>
-      <div class="option" data-val="Legal"><div class="option-box"></div><div class="option-text">Legal / Professional Services <span class="option-text-cn">法律/专业服务</span></div></div>
-      <div class="option" data-val="Retail"><div class="option-box"></div><div class="option-text">Retail / Chain Business <span class="option-text-cn">零售/连锁</span></div></div>
-      <div class="option" data-val="Technology"><div class="option-box"></div><div class="option-text">Technology / Internet <span class="option-text-cn">科技/互联网</span></div></div>
-      <div class="option" data-val="Government"><div class="option-box"></div><div class="option-text">Government / Public Sector <span class="option-text-cn">政府/公共机构</span></div></div>
-      <div class="option" data-val="Education"><div class="option-box"></div><div class="option-text">Education <span class="option-text-cn">教育</span></div></div>
-      <div class="option" data-val="Other-industry" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
+      <div class="option" data-val="Manufacturing"><div class="option-box"></div><div class="option-text">Manufacturing <span class="option-cn">制造业</span></div></div>
+      <div class="option" data-val="Trading"><div class="option-box"></div><div class="option-text">Trading / Import & Export <span class="option-cn">贸易/进出口</span></div></div>
+      <div class="option" data-val="Logistics"><div class="option-box"></div><div class="option-text">Logistics / Supply Chain <span class="option-cn">物流/供应链</span></div></div>
+      <div class="option" data-val="Retail"><div class="option-box"></div><div class="option-text">Retail / Wholesale <span class="option-cn">零售/批发</span></div></div>
+      <div class="option" data-val="Finance"><div class="option-box"></div><div class="option-text">Finance / Accounting Services <span class="option-cn">财务/会计服务</span></div></div>
+      <div class="option" data-val="Healthcare"><div class="option-box"></div><div class="option-text">Healthcare / Clinics <span class="option-cn">医疗/诊所</span></div></div>
+      <div class="option" data-val="Legal"><div class="option-box"></div><div class="option-text">Legal / Professional Services <span class="option-cn">法律/专业服务</span></div></div>
+      <div class="option" data-val="Technology"><div class="option-box"></div><div class="option-text">Technology / Internet <span class="option-cn">科技/互联网</span></div></div>
+      <div class="option" data-val="Education"><div class="option-box"></div><div class="option-text">Education <span class="option-cn">教育</span></div></div>
+      <div class="option" data-val="Government"><div class="option-box"></div><div class="option-text">Government / Public Sector <span class="option-cn">政府/公共机构</span></div></div>
+      <div class="option" data-val="Other-industry" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
     </div>
     <input type="text" class="other-input" id="other-2" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q3</div>
-    <div class="q-text">How many employees does your company have?<br><span style="font-size:13px;color:var(--muted)">您企业的员工规模是？</span></div>
+    <div class="q-text">How many employees does your company have?<span class="q-cn">您企业的员工规模是？</span></div>
     <div class="options radio" data-q="3" data-type="single">
       <div class="option" data-val="1-20"><div class="option-box"></div><div class="option-text">1 – 20</div></div>
       <div class="option" data-val="20-50"><div class="option-box"></div><div class="option-text">20 – 50</div></div>
@@ -539,443 +150,414 @@
 
   <div class="q-card">
     <div class="q-label">Q4</div>
-    <div class="q-text">What is your company's internal IT capability?<br><span style="font-size:13px;color:var(--muted)">企业内部 IT 能力情况？</span></div>
+    <div class="q-text">What is your company's internal IT capability?<span class="q-cn">企业内部 IT 能力情况？</span></div>
     <div class="options radio" data-q="4" data-type="single">
-      <div class="option" data-val="No IT"><div class="option-box"></div><div class="option-text">No dedicated IT team <span class="option-text-cn">无专职 IT 团队</span></div></div>
-      <div class="option" data-val="1-3 IT"><div class="option-box"></div><div class="option-text">1–3 person IT team <span class="option-text-cn">1–3 人 IT 团队</span></div></div>
-      <div class="option" data-val="IT Dept"><div class="option-box"></div><div class="option-text">Dedicated IT department <span class="option-text-cn">独立 IT 部门</span></div></div>
-      <div class="option" data-val="Outsourced IT"><div class="option-box"></div><div class="option-text">Mostly outsourced IT <span class="option-text-cn">主要依赖外包 IT</span></div></div>
+      <div class="option" data-val="No IT"><div class="option-box"></div><div class="option-text">No dedicated IT team <span class="option-cn">无专职 IT 团队</span></div></div>
+      <div class="option" data-val="1-3 IT"><div class="option-box"></div><div class="option-text">1–3 person IT team <span class="option-cn">1–3 人 IT 团队</span></div></div>
+      <div class="option" data-val="IT Dept"><div class="option-box"></div><div class="option-text">Dedicated IT department <span class="option-cn">独立 IT 部门</span></div></div>
+      <div class="option" data-val="Outsourced IT"><div class="option-box"></div><div class="option-text">Mostly outsourced IT <span class="option-cn">主要依赖外包 IT</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q5</div>
-    <div class="q-text">Does your company currently invest in AI?<br><span style="font-size:13px;color:var(--muted)">企业目前是否已有 AI 相关投入？</span></div>
+    <div class="q-text">Has your company invested in AI?<span class="q-cn">企业目前是否已有 AI 相关投入？</span></div>
     <div class="options radio" data-q="5" data-type="single">
-      <div class="option" data-val="Deployed"><div class="option-box"></div><div class="option-text">Formally deployed AI tools <span class="option-text-cn">已正式部署 AI 工具</span></div></div>
-      <div class="option" data-val="Testing"><div class="option-box"></div><div class="option-text">Currently testing AI tools <span class="option-text-cn">正在测试 AI 工具</span></div></div>
-      <div class="option" data-val="Planning"><div class="option-box"></div><div class="option-text">Plan to try within the year <span class="option-text-cn">计划未来一年内尝试</span></div></div>
-      <div class="option" data-val="None"><div class="option-box"></div><div class="option-text">No plans <span class="option-text-cn">暂无计划</span></div></div>
+      <div class="option" data-val="Deployed"><div class="option-box"></div><div class="option-text">Formally deployed AI tools <span class="option-cn">已正式部署 AI 工具</span></div></div>
+      <div class="option" data-val="Testing"><div class="option-box"></div><div class="option-text">Currently testing AI tools <span class="option-cn">正在测试 AI 工具</span></div></div>
+      <div class="option" data-val="Planning"><div class="option-box"></div><div class="option-text">Planning to try within the year <span class="option-cn">计划未来一年内尝试</span></div></div>
+      <div class="option" data-val="None"><div class="option-box"></div><div class="option-text">No plans currently <span class="option-cn">暂无计划</span></div></div>
     </div>
   </div>
 
-  <!-- Part 2 -->
-  <div class="part-heading">
-    <div class="part-num">2</div>
-    <h2>Current AI Usage <span>当前 AI 使用情况</span></h2>
-    <div class="part-divider"></div>
-  </div>
+  <div class="part-heading"><div class="part-num">2</div><h2>Current Business Operations <span>企业当前运营方式</span></h2><div class="part-divider"></div></div>
 
   <div class="q-card">
     <div class="q-label">Q6</div>
-    <div class="q-text">Which AI tools does your company currently use? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">企业目前正在使用哪些 AI 工具？（可多选）</span></div>
+    <div class="q-text">Which business systems does your company rely on most? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业目前最依赖哪些业务系统？（可多选）</span></div>
     <div class="options" data-q="6" data-type="multi">
-      <div class="option" data-val="ChatGPT"><div class="option-box"></div><div class="option-text">ChatGPT</div></div>
-      <div class="option" data-val="Microsoft Copilot"><div class="option-box"></div><div class="option-text">Microsoft Copilot</div></div>
-      <div class="option" data-val="Gemini"><div class="option-box"></div><div class="option-text">Gemini</div></div>
-      <div class="option" data-val="Claude"><div class="option-box"></div><div class="option-text">Claude</div></div>
-      <div class="option" data-val="OCR Software"><div class="option-box"></div><div class="option-text">OCR Software <span class="option-text-cn">OCR 软件</span></div></div>
-      <div class="option" data-val="ERP AI"><div class="option-box"></div><div class="option-text">ERP built-in AI <span class="option-text-cn">ERP 自带 AI 功能</span></div></div>
-      <div class="option" data-val="In-house AI"><div class="option-box"></div><div class="option-text">In-house AI <span class="option-text-cn">企业内部自研 AI</span></div></div>
-      <div class="option" data-val="None yet"><div class="option-box"></div><div class="option-text">Not using AI yet <span class="option-text-cn">尚未使用 AI</span></div></div>
-      <div class="option" data-val="Other-tool" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
+      <div class="option" data-val="CRM"><div class="option-box"></div><div class="option-text">CRM System <span class="option-cn">CRM 系统</span></div></div>
+      <div class="option" data-val="ERP"><div class="option-box"></div><div class="option-text">ERP System <span class="option-cn">ERP 系统</span></div></div>
+      <div class="option" data-val="Inventory"><div class="option-box"></div><div class="option-text">Inventory Management System <span class="option-cn">库存管理系统</span></div></div>
+      <div class="option" data-val="Excel/Sheets"><div class="option-box"></div><div class="option-text">Excel / Google Sheets</div></div>
+      <div class="option" data-val="Finance System"><div class="option-box"></div><div class="option-text">Finance System <span class="option-cn">财务系统</span></div></div>
+      <div class="option" data-val="HR System"><div class="option-box"></div><div class="option-text">HR System <span class="option-cn">HR 系统</span></div></div>
+      <div class="option" data-val="No unified system"><div class="option-box"></div><div class="option-text">No unified system <span class="option-cn">没有统一系统</span></div></div>
+      <div class="option" data-val="Other-system" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
     </div>
     <input type="text" class="other-input" id="other-6" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q7</div>
-    <div class="q-text">What are the main AI use cases in your company? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">企业主要使用 AI 的场景有哪些？（可多选）</span></div>
+    <div class="q-text">Which communication tools does your company use daily? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业日常主要使用哪些沟通工具？（可多选）</span></div>
     <div class="options" data-q="7" data-type="multi">
-      <div class="option" data-val="Document management"><div class="option-box"></div><div class="option-text">Document management <span class="option-text-cn">文档整理</span></div></div>
-      <div class="option" data-val="OCR"><div class="option-box"></div><div class="option-text">OCR recognition <span class="option-text-cn">OCR 识别</span></div></div>
-      <div class="option" data-val="Finance processing"><div class="option-box"></div><div class="option-text">Finance processing <span class="option-text-cn">财务处理</span></div></div>
-      <div class="option" data-val="Customer support"><div class="option-box"></div><div class="option-text">Customer support <span class="option-text-cn">客服支持</span></div></div>
-      <div class="option" data-val="HR recruitment"><div class="option-box"></div><div class="option-text">HR & recruitment <span class="option-text-cn">HR 招聘</span></div></div>
-      <div class="option" data-val="Knowledge search"><div class="option-box"></div><div class="option-text">Knowledge search <span class="option-text-cn">知识搜索</span></div></div>
-      <div class="option" data-val="Meeting notes"><div class="option-box"></div><div class="option-text">Meeting notes <span class="option-text-cn">会议纪要</span></div></div>
-      <div class="option" data-val="Data analysis"><div class="option-box"></div><div class="option-text">Data analysis <span class="option-text-cn">数据分析</span></div></div>
-      <div class="option" data-val="Content generation"><div class="option-box"></div><div class="option-text">Content generation <span class="option-text-cn">内容生成</span></div></div>
-      <div class="option" data-val="Development"><div class="option-box"></div><div class="option-text">Development / Coding <span class="option-text-cn">编程开发</span></div></div>
-      <div class="option" data-val="Other-usecase" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
+      <div class="option" data-val="WhatsApp"><div class="option-box"></div><div class="option-text">WhatsApp</div></div>
+      <div class="option" data-val="Email"><div class="option-box"></div><div class="option-text">Email</div></div>
+      <div class="option" data-val="Teams"><div class="option-box"></div><div class="option-text">Microsoft Teams</div></div>
+      <div class="option" data-val="Slack"><div class="option-box"></div><div class="option-text">Slack</div></div>
+      <div class="option" data-val="WeChat"><div class="option-box"></div><div class="option-text">WeChat / WeCom <span class="option-cn">微信 / 企业微信</span></div></div>
+      <div class="option" data-val="Telegram"><div class="option-box"></div><div class="option-text">Telegram</div></div>
+      <div class="option" data-val="Line"><div class="option-box"></div><div class="option-text">Line</div></div>
+      <div class="option" data-val="Internal comms"><div class="option-box"></div><div class="option-text">Internal communication system <span class="option-cn">内部沟通系统</span></div></div>
+      <div class="option" data-val="Other-comms" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
     </div>
     <input type="text" class="other-input" id="other-7" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q8</div>
-    <div class="q-text">What are the biggest challenges with your current AI usage? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">当前 AI 使用过程中最大的挑战是什么？（可多选）</span></div>
+    <div class="q-text">What are the main AI use cases in your company? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业目前主要使用 AI 的场景有哪些？（可多选）</span></div>
     <div class="options" data-q="8" data-type="multi">
-      <div class="option" data-val="Data security"><div class="option-box"></div><div class="option-text">Data security risks <span class="option-text-cn">数据安全风险</span></div></div>
-      <div class="option" data-val="Unstable output"><div class="option-box"></div><div class="option-text">Unstable output quality <span class="option-text-cn">输出结果不稳定</span></div></div>
-      <div class="option" data-val="High cost"><div class="option-box"></div><div class="option-text">Too expensive <span class="option-text-cn">成本太高</span></div></div>
-      <div class="option" data-val="Staff not capable"><div class="option-box"></div><div class="option-text">Staff don't know how to use it <span class="option-text-cn">员工不会使用</span></div></div>
-      <div class="option" data-val="Poor results"><div class="option-box"></div><div class="option-text">AI performance is mediocre <span class="option-text-cn">AI 效果一般</span></div></div>
-      <div class="option" data-val="No system integration"><div class="option-box"></div><div class="option-text">Cannot integrate with business systems <span class="option-text-cn">无法接入业务系统</span></div></div>
-      <div class="option" data-val="No on-prem"><div class="option-box"></div><div class="option-text">No on-premise deployment option <span class="option-text-cn">不支持本地部署</span></div></div>
-      <div class="option" data-val="Language support"><div class="option-box"></div><div class="option-text">Poor multilingual support <span class="option-text-cn">多语言能力不足</span></div></div>
-      <div class="option" data-val="Complex docs"><div class="option-box"></div><div class="option-text">Cannot handle complex documents <span class="option-text-cn">无法处理复杂文档</span></div></div>
-      <div class="option" data-val="Workflow mismatch"><div class="option-box"></div><div class="option-text">Doesn't fit business processes <span class="option-text-cn">不符合企业流程</span></div></div>
+      <div class="option" data-val="CRM AI"><div class="option-box"></div><div class="option-text">Customer Management (CRM) <span class="option-cn">客户管理 CRM</span></div></div>
+      <div class="option" data-val="Sales support"><div class="option-box"></div><div class="option-text">Sales support <span class="option-cn">销售支持</span></div></div>
+      <div class="option" data-val="Customer service"><div class="option-box"></div><div class="option-text">Customer service <span class="option-cn">客服支持</span></div></div>
+      <div class="option" data-val="Inventory AI"><div class="option-box"></div><div class="option-text">Inventory management <span class="option-cn">库存管理</span></div></div>
+      <div class="option" data-val="Finance AI"><div class="option-box"></div><div class="option-text">Finance processing <span class="option-cn">财务处理</span></div></div>
+      <div class="option" data-val="Data analysis"><div class="option-box"></div><div class="option-text">Data analysis <span class="option-cn">数据分析</span></div></div>
+      <div class="option" data-val="Document mgmt"><div class="option-box"></div><div class="option-text">Document management <span class="option-cn">文档整理</span></div></div>
+      <div class="option" data-val="AI chatbot"><div class="option-box"></div><div class="option-text">AI chatbot assistant <span class="option-cn">AI 聊天助手</span></div></div>
+      <div class="option" data-val="HR AI"><div class="option-box"></div><div class="option-text">HR & recruitment <span class="option-cn">HR 招聘</span></div></div>
+      <div class="option" data-val="Meeting notes"><div class="option-box"></div><div class="option-text">Meeting notes <span class="option-cn">会议纪要</span></div></div>
+      <div class="option" data-val="Content gen"><div class="option-box"></div><div class="option-text">Content generation <span class="option-cn">内容生成</span></div></div>
+      <div class="option" data-val="No AI yet"><div class="option-box"></div><div class="option-text">Not using AI yet <span class="option-cn">尚未使用 AI</span></div></div>
     </div>
-  </div>
-
-  <!-- Part 3 -->
-  <div class="part-heading">
-    <div class="part-num">3</div>
-    <h2>Document & Workflow Challenges <span>文档与业务流程痛点</span></h2>
-    <div class="part-divider"></div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q9</div>
-    <div class="q-text">What types of documents does your company handle daily? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">企业日常需要处理哪些类型的文档？（可多选）</span></div>
+    <div class="q-text">What are the biggest challenges with your current AI usage? <span class="q-tag">(Select all that apply)</span><span class="q-cn">当前 AI 使用过程中最大的挑战是什么？（可多选）</span></div>
     <div class="options" data-q="9" data-type="multi">
-      <div class="option" data-val="Invoice"><div class="option-box"></div><div class="option-text">Invoice <span class="option-text-cn">发票</span></div></div>
-      <div class="option" data-val="Contract"><div class="option-box"></div><div class="option-text">Contract <span class="option-text-cn">合同</span></div></div>
-      <div class="option" data-val="Bank Statement"><div class="option-box"></div><div class="option-text">Bank Statement <span class="option-text-cn">银行流水</span></div></div>
-      <div class="option" data-val="Expense Claims"><div class="option-box"></div><div class="option-text">Expense Claims <span class="option-text-cn">报销单</span></div></div>
-      <div class="option" data-val="Customs Documents"><div class="option-box"></div><div class="option-text">Customs Documents <span class="option-text-cn">报关单</span></div></div>
-      <div class="option" data-val="Signed Documents"><div class="option-box"></div><div class="option-text">Signed Documents <span class="option-text-cn">回签文件</span></div></div>
-      <div class="option" data-val="Resumes"><div class="option-box"></div><div class="option-text">HR Resumes <span class="option-text-cn">HR 简历</span></div></div>
-      <div class="option" data-val="Medical Documents"><div class="option-box"></div><div class="option-text">Medical Documents <span class="option-text-cn">医疗文件</span></div></div>
-      <div class="option" data-val="PDF Reports"><div class="option-box"></div><div class="option-text">PDF Reports <span class="option-text-cn">PDF 报告</span></div></div>
-      <div class="option" data-val="Excel Files"><div class="option-box"></div><div class="option-text">Excel Files <span class="option-text-cn">Excel 数据</span></div></div>
-      <div class="option" data-val="Email Attachments"><div class="option-box"></div><div class="option-text">Email Attachments <span class="option-text-cn">邮件附件</span></div></div>
-      <div class="option" data-val="Multi-language"><div class="option-box"></div><div class="option-text">Multi-language Documents <span class="option-text-cn">多语言文档</span></div></div>
+      <div class="option" data-val="Data security"><div class="option-box"></div><div class="option-text">Data security risks <span class="option-cn">数据安全风险</span></div></div>
+      <div class="option" data-val="Unstable output"><div class="option-box"></div><div class="option-text">Unstable AI output <span class="option-cn">AI 输出不稳定</span></div></div>
+      <div class="option" data-val="High cost"><div class="option-box"></div><div class="option-text">Too expensive <span class="option-cn">成本太高</span></div></div>
+      <div class="option" data-val="Staff cant use"><div class="option-box"></div><div class="option-text">Staff don't know how to use it <span class="option-cn">员工不会使用</span></div></div>
+      <div class="option" data-val="No integration"><div class="option-box"></div><div class="option-text">Cannot integrate with existing systems <span class="option-cn">无法接入现有系统</span></div></div>
+      <div class="option" data-val="No on-prem"><div class="option-box"></div><div class="option-text">No on-premise deployment option <span class="option-cn">不支持本地部署</span></div></div>
+      <div class="option" data-val="No CRM sync"><div class="option-box"></div><div class="option-text">CRM / inventory cannot sync <span class="option-cn">CRM / 库存无法协同</span></div></div>
+      <div class="option" data-val="Language"><div class="option-box"></div><div class="option-text">Poor multilingual support <span class="option-cn">多语言能力不足</span></div></div>
+      <div class="option" data-val="Low automation"><div class="option-box"></div><div class="option-text">Insufficient automation <span class="option-cn">自动化程度不足</span></div></div>
+      <div class="option" data-val="Workflow mismatch"><div class="option-box"></div><div class="option-text">Doesn't fit business processes <span class="option-cn">不符合企业流程</span></div></div>
     </div>
   </div>
 
+  <div class="part-heading"><div class="part-num">3</div><h2>Business Operations Challenges <span>企业运营与管理痛点</span></h2><div class="part-divider"></div></div>
+
   <div class="q-card">
     <div class="q-label">Q10</div>
-    <div class="q-text">How many documents does your company process per day?<br><span style="font-size:13px;color:var(--muted)">企业每天大约需要处理多少份文档？</span></div>
-    <div class="options radio" data-q="10" data-type="single">
-      <div class="option" data-val="<50"><div class="option-box"></div><div class="option-text">Fewer than 50 <span class="option-text-cn">少于 50 份</span></div></div>
-      <div class="option" data-val="50-200"><div class="option-box"></div><div class="option-text">50 – 200</div></div>
-      <div class="option" data-val="200-1000"><div class="option-box"></div><div class="option-text">200 – 1,000</div></div>
-      <div class="option" data-val="1000+"><div class="option-box"></div><div class="option-text">More than 1,000 <span class="option-text-cn">1000 份以上</span></div></div>
+    <div class="q-text">Which operational areas are the most labor-intensive? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业目前在哪些运营环节最耗费人力？（可多选）</span></div>
+    <div class="options" data-q="10" data-type="multi">
+      <div class="option" data-val="Customer follow-up"><div class="option-box"></div><div class="option-text">Customer follow-up <span class="option-cn">客户跟进</span></div></div>
+      <div class="option" data-val="Sales data"><div class="option-box"></div><div class="option-text">Sales data management <span class="option-cn">销售数据整理</span></div></div>
+      <div class="option" data-val="Inventory update"><div class="option-box"></div><div class="option-text">Inventory updates <span class="option-cn">库存更新</span></div></div>
+      <div class="option" data-val="Procurement"><div class="option-box"></div><div class="option-text">Procurement coordination <span class="option-cn">采购协同</span></div></div>
+      <div class="option" data-val="Order sync"><div class="option-box"></div><div class="option-text">Order synchronization <span class="option-cn">订单同步</span></div></div>
+      <div class="option" data-val="Customer comms"><div class="option-box"></div><div class="option-text">Customer communication <span class="option-cn">客户沟通</span></div></div>
+      <div class="option" data-val="Finance reconcile"><div class="option-box"></div><div class="option-text">Finance reconciliation <span class="option-cn">财务对账</span></div></div>
+      <div class="option" data-val="Data entry"><div class="option-box"></div><div class="option-text">Data entry <span class="option-cn">数据录入</span></div></div>
+      <div class="option" data-val="Cross-dept"><div class="option-box"></div><div class="option-text">Cross-department communication <span class="option-cn">跨部门沟通</span></div></div>
+      <div class="option" data-val="Report gen"><div class="option-box"></div><div class="option-text">Report generation <span class="option-cn">报表生成</span></div></div>
+      <div class="option" data-val="Comms mgmt"><div class="option-box"></div><div class="option-text">Managing communication records <span class="option-cn">企业沟通信息整理</span></div></div>
+      <div class="option" data-val="File archiving"><div class="option-box"></div><div class="option-text">File archiving <span class="option-cn">文件归档</span></div></div>
+      <div class="option" data-val="Other-labor" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
     </div>
+    <input type="text" class="other-input" id="other-10" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q11</div>
-    <div class="q-text">How does your company currently handle document processing?<br><span style="font-size:13px;color:var(--muted)">当前文档处理主要依赖什么方式？</span></div>
+    <div class="q-text">Does your company currently experience any of the following? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业目前是否存在以下情况？（可多选）</span></div>
     <div class="options" data-q="11" data-type="multi">
-      <div class="option" data-val="Manual"><div class="option-box"></div><div class="option-text">Manual processing <span class="option-text-cn">人工处理</span></div></div>
-      <div class="option" data-val="Excel"><div class="option-box"></div><div class="option-text">Excel</div></div>
-      <div class="option" data-val="ERP"><div class="option-box"></div><div class="option-text">ERP system <span class="option-text-cn">ERP 系统</span></div></div>
-      <div class="option" data-val="OCR tools"><div class="option-box"></div><div class="option-text">OCR tools <span class="option-text-cn">OCR 工具</span></div></div>
-      <div class="option" data-val="AI tools doc"><div class="option-box"></div><div class="option-text">AI tools <span class="option-text-cn">AI 工具</span></div></div>
-      <div class="option" data-val="Outsourced team"><div class="option-box"></div><div class="option-text">Outsourced team <span class="option-text-cn">外包团队</span></div></div>
+      <div class="option" data-val="Data scattered"><div class="option-box"></div><div class="option-text">Customer data scattered across multiple systems <span class="option-cn">客户信息分散在多个系统</span></div></div>
+      <div class="option" data-val="Sales inv sync"><div class="option-box"></div><div class="option-text">Sales and inventory data not in sync <span class="option-cn">销售与库存数据不同步</span></div></div>
+      <div class="option" data-val="Comms not unified"><div class="option-box"></div><div class="option-text">Communication records cannot be centrally managed <span class="option-cn">沟通记录无法统一管理</span></div></div>
+      <div class="option" data-val="Excel mismatch"><div class="option-box"></div><div class="option-text">Excel and system data are inconsistent <span class="option-cn">Excel 与系统数据不一致</span></div></div>
+      <div class="option" data-val="Tool fragmentation"><div class="option-box"></div><div class="option-text">Different departments use different tools <span class="option-cn">不同部门使用不同工具</span></div></div>
+      <div class="option" data-val="No unified view"><div class="option-box"></div><div class="option-text">Management lacks a unified data view <span class="option-cn">管理层缺少统一数据视图</span></div></div>
+      <div class="option" data-val="Manual comms"><div class="option-box"></div><div class="option-text">Many processes rely on manual communication <span class="option-cn">大量流程依赖人工沟通</span></div></div>
+      <div class="option" data-val="Duplicate entry"><div class="option-box"></div><div class="option-text">Duplicate data entry across systems <span class="option-cn">多系统重复录入</span></div></div>
+      <div class="option" data-val="No issues"><div class="option-box"></div><div class="option-text">No significant issues <span class="option-cn">暂无明显问题</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q12</div>
-    <div class="q-text">Which steps are the most time-consuming? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">哪些环节最耗费时间？（可多选）</span></div>
-    <div class="options" data-q="12" data-type="multi">
-      <div class="option" data-val="OCR entry"><div class="option-box"></div><div class="option-text">OCR data entry <span class="option-text-cn">OCR 录入</span></div></div>
-      <div class="option" data-val="File classification"><div class="option-box"></div><div class="option-text">File classification & archiving <span class="option-text-cn">文件分类归档</span></div></div>
-      <div class="option" data-val="Finance reconciliation"><div class="option-box"></div><div class="option-text">Finance reconciliation <span class="option-text-cn">财务对账</span></div></div>
-      <div class="option" data-val="Info verification"><div class="option-box"></div><div class="option-text">Information verification <span class="option-text-cn">信息核对</span></div></div>
-      <div class="option" data-val="Contract management"><div class="option-box"></div><div class="option-text">Contract management <span class="option-text-cn">合同整理</span></div></div>
-      <div class="option" data-val="Approval process"><div class="option-box"></div><div class="option-text">Approval process <span class="option-text-cn">审批流程</span></div></div>
-      <div class="option" data-val="Multi-system sync"><div class="option-box"></div><div class="option-text">Multi-system sync <span class="option-text-cn">多系统同步</span></div></div>
-      <div class="option" data-val="Data search"><div class="option-box"></div><div class="option-text">Data search <span class="option-text-cn">数据查找</span></div></div>
-      <div class="option" data-val="Meeting notes doc"><div class="option-box"></div><div class="option-text">Meeting notes <span class="option-text-cn">会议纪要整理</span></div></div>
-      <div class="option" data-val="Other-timeconsuming" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
-    </div>
-    <input type="text" class="other-input" id="other-12" placeholder="Please specify...">
-  </div>
-
-  <div class="q-card">
-    <div class="q-label">Q13</div>
-    <div class="q-text">What are the most common issues with document handling? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">当前文档处理最常见的问题是什么？（可多选）</span></div>
-    <div class="options" data-q="13" data-type="multi">
-      <div class="option" data-val="High error rate"><div class="option-box"></div><div class="option-text">High error rate <span class="option-text-cn">出错率高</span></div></div>
-      <div class="option" data-val="High labor cost"><div class="option-box"></div><div class="option-text">High labor cost <span class="option-text-cn">人工成本高</span></div></div>
-      <div class="option" data-val="Slow response"><div class="option-box"></div><div class="option-text">Slow response time <span class="option-text-cn">响应速度慢</span></div></div>
-      <div class="option" data-val="Files lost"><div class="option-box"></div><div class="option-text">Files easily lost <span class="option-text-cn">文件容易丢失</span></div></div>
-      <div class="option" data-val="No tracking"><div class="option-box"></div><div class="option-text">Cannot track process <span class="option-text-cn">流程无法追踪</span></div></div>
-      <div class="option" data-val="Review pressure"><div class="option-box"></div><div class="option-text">Heavy review workload <span class="option-text-cn">审核压力大</span></div></div>
-      <div class="option" data-val="Compliance risk"><div class="option-box"></div><div class="option-text">Compliance risks <span class="option-text-cn">合规风险</span></div></div>
-      <div class="option" data-val="Multilingual difficulty"><div class="option-box"></div><div class="option-text">Multilingual processing difficulty <span class="option-text-cn">多语言处理困难</span></div></div>
-      <div class="option" data-val="Other-issue" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
-    </div>
-    <input type="text" class="other-input" id="other-13" placeholder="Please specify...">
-  </div>
-
-  <!-- Part 4 -->
-  <div class="part-heading">
-    <div class="part-num">4</div>
-    <h2>Data Security & Private AI <span>数据安全与私有化 AI</span></h2>
-    <div class="part-divider"></div>
-  </div>
-
-  <div class="q-card">
-    <div class="q-label">Q14</div>
-    <div class="q-text">Do you allow employees to upload client documents to public cloud AI (e.g. ChatGPT)?<br><span style="font-size:13px;color:var(--muted)">企业是否允许员工将客户文件上传到公有云 AI？</span></div>
-    <div class="options radio" data-q="14" data-type="single">
-      <div class="option" data-val="Fully allowed"><div class="option-box"></div><div class="option-text">Fully allowed <span class="option-text-cn">完全允许</span></div></div>
-      <div class="option" data-val="Partially allowed"><div class="option-box"></div><div class="option-text">Partially allowed <span class="option-text-cn">部分允许</span></div></div>
-      <div class="option" data-val="Explicitly prohibited"><div class="option-box"></div><div class="option-text">Explicitly prohibited <span class="option-text-cn">明确禁止</span></div></div>
-      <div class="option" data-val="No policy"><div class="option-box"></div><div class="option-text">No policy yet <span class="option-text-cn">尚无规定</span></div></div>
-    </div>
-  </div>
-
-  <div class="q-card">
-    <div class="q-label">Q15</div>
-    <div class="q-text">How concerned is your company about each of the following? <em style="font-size:13px;color:var(--accent)">(1 = Not concerned, 5 = Very concerned)</em><br><span style="font-size:13px;color:var(--muted)">企业对以下问题的担忧程度如何？（1 = 完全不担心，5 = 非常担心）</span></div>
-    <table class="rating-table" id="rating-15">
-      <thead>
-        <tr>
-          <th></th>
-          <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-        </tr>
-      </thead>
+    <div class="q-text">How severe are the following issues in your company? <span class="q-tag">(1 = Not at all, 5 = Very severe)</span><span class="q-cn">企业是否存在以下问题？（1 = 完全没有，5 = 非常严重）</span></div>
+    <table class="rating-table">
+      <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
       <tbody>
-        <tr data-row="Client data leakage">
-          <td>Client data leakage<br><span style="font-size:11px;color:var(--muted)">客户数据泄露</span></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Client data leakage" data-val="1"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Client data leakage" data-val="2"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Client data leakage" data-val="3"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Client data leakage" data-val="4"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Client data leakage" data-val="5"></div></td>
-        </tr>
-        <tr data-row="AI training on data">
-          <td>AI using your data for training<br><span style="font-size:11px;color:var(--muted)">AI 使用企业数据训练</span></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="AI training on data" data-val="1"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="AI training on data" data-val="2"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="AI training on data" data-val="3"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="AI training on data" data-val="4"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="AI training on data" data-val="5"></div></td>
-        </tr>
-        <tr data-row="File transmission risk">
-          <td>File transmission risk<br><span style="font-size:11px;color:var(--muted)">文件外传风险</span></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="File transmission risk" data-val="1"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="File transmission risk" data-val="2"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="File transmission risk" data-val="3"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="File transmission risk" data-val="4"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="File transmission risk" data-val="5"></div></td>
-        </tr>
-        <tr data-row="Compliance risk">
-          <td>Compliance risk<br><span style="font-size:11px;color:var(--muted)">合规风险</span></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Compliance risk" data-val="1"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Compliance risk" data-val="2"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Compliance risk" data-val="3"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Compliance risk" data-val="4"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Compliance risk" data-val="5"></div></td>
-        </tr>
-        <tr data-row="Cross-border data risk">
-          <td>Cross-border data risk<br><span style="font-size:11px;color:var(--muted)">跨境数据风险</span></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Cross-border data risk" data-val="1"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Cross-border data risk" data-val="2"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Cross-border data risk" data-val="3"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Cross-border data risk" data-val="4"></div></td>
-          <td class="rating-cell"><div class="rating-radio" data-row="Cross-border data risk" data-val="5"></div></td>
-        </tr>
+        <tr><td>CRM data inconsistency <span class="option-cn">CRM 数据不统一</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="CRM" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="CRM" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="CRM" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="CRM" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="CRM" data-val="5"></div></td></tr>
+        <tr><td>Excel data chaos <span class="option-cn">Excel 数据混乱</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Excel" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Excel" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Excel" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Excel" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Excel" data-val="5"></div></td></tr>
+        <tr><td>Comms records hard to retain <span class="option-cn">企业沟通记录难以沉淀</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Comms" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Comms" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Comms" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Comms" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Comms" data-val="5"></div></td></tr>
+        <tr><td>Inventory not updated in time <span class="option-cn">库存更新不及时</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Inventory" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Inventory" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Inventory" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Inventory" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Inventory" data-val="5"></div></td></tr>
+        <tr><td>Sales & inventory out of sync <span class="option-cn">销售与库存信息不同步</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="SalesInv" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="SalesInv" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="SalesInv" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="SalesInv" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="SalesInv" data-val="5"></div></td></tr>
+        <tr><td>Duplicate data entry <span class="option-cn">多系统重复录入</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Duplicate" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Duplicate" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Duplicate" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Duplicate" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Duplicate" data-val="5"></div></td></tr>
+        <tr><td>No real-time business visibility <span class="option-cn">管理者无法实时掌握业务</span></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Realtime" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Realtime" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Realtime" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Realtime" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="12" data-row="Realtime" data-val="5"></div></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="q-card">
-    <div class="q-label">Q16</div>
-    <div class="q-text">Which AI deployment model does your company prefer?<br><span style="font-size:13px;color:var(--muted)">企业更倾向哪种 AI 部署方式？</span></div>
-    <div class="options radio" data-q="16" data-type="single">
-      <div class="option" data-val="Public cloud SaaS"><div class="option-box"></div><div class="option-text">Public cloud SaaS <span class="option-text-cn">公有云 SaaS</span></div></div>
-      <div class="option" data-val="On-premise"><div class="option-box"></div><div class="option-text">On-premise private deployment <span class="option-text-cn">本地私有部署</span></div></div>
-      <div class="option" data-val="Hybrid"><div class="option-box"></div><div class="option-text">Hybrid deployment <span class="option-text-cn">混合部署</span></div></div>
-      <div class="option" data-val="Unsure"><div class="option-box"></div><div class="option-text">Not sure <span class="option-text-cn">不确定</span></div></div>
+    <div class="q-label">Q13</div>
+    <div class="q-text">Which workflows would you most like AI to automate? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业目前最希望 AI 自动化哪些工作？（可多选）</span></div>
+    <div class="options" data-q="13" data-type="multi">
+      <div class="option" data-val="Follow-up reminders"><div class="option-box"></div><div class="option-text">Customer follow-up reminders <span class="option-cn">客户跟进提醒</span></div></div>
+      <div class="option" data-val="CRM auto update"><div class="option-box"></div><div class="option-text">CRM auto-update <span class="option-cn">CRM 自动更新</span></div></div>
+      <div class="option" data-val="Comms summary"><div class="option-box"></div><div class="option-text">Business communication summarization <span class="option-cn">企业沟通信息总结</span></div></div>
+      <div class="option" data-val="Auto reports"><div class="option-box"></div><div class="option-text">Auto-generate business reports <span class="option-cn">自动生成业务报表</span></div></div>
+      <div class="option" data-val="Inventory sync"><div class="option-box"></div><div class="option-text">Inventory sync <span class="option-cn">库存同步</span></div></div>
+      <div class="option" data-val="Procurement auto"><div class="option-box"></div><div class="option-text">Procurement process automation <span class="option-cn">采购流程自动化</span></div></div>
+      <div class="option" data-val="Order tracking"><div class="option-box"></div><div class="option-text">Order status tracking <span class="option-cn">订单状态跟踪</span></div></div>
+      <div class="option" data-val="AI sales assistant"><div class="option-box"></div><div class="option-text">AI sales assistant <span class="option-cn">AI 销售助理</span></div></div>
+      <div class="option" data-val="AI customer service"><div class="option-box"></div><div class="option-text">AI customer service <span class="option-cn">AI 客服助理</span></div></div>
+      <div class="option" data-val="Multi-sys sync"><div class="option-box"></div><div class="option-text">Multi-system data sync <span class="option-cn">多系统数据同步</span></div></div>
+      <div class="option" data-val="Doc Excel proc"><div class="option-box"></div><div class="option-text">File & Excel processing <span class="option-cn">文件与 Excel 处理</span></div></div>
+      <div class="option" data-val="Meeting notes auto"><div class="option-box"></div><div class="option-text">Auto meeting notes <span class="option-cn">会议纪要自动生成</span></div></div>
+    </div>
+  </div>
+
+  <div class="part-heading"><div class="part-num">4</div><h2>Document & Data Processing <span>文档与数据处理情况</span></h2><div class="part-divider"></div></div>
+
+  <div class="q-card">
+    <div class="q-label">Q14</div>
+    <div class="q-text">What types of data or files does your company handle daily? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业日常需要处理哪些类型的数据或文件？（可多选）</span></div>
+    <div class="options" data-q="14" data-type="multi">
+      <div class="option" data-val="Excel data"><div class="option-box"></div><div class="option-text">Excel data <span class="option-cn">Excel 数据</span></div></div>
+      <div class="option" data-val="PDF reports"><div class="option-box"></div><div class="option-text">PDF reports <span class="option-cn">PDF 报告</span></div></div>
+      <div class="option" data-val="Invoice"><div class="option-box"></div><div class="option-text">Invoices <span class="option-cn">发票</span></div></div>
+      <div class="option" data-val="Contract"><div class="option-box"></div><div class="option-text">Contracts <span class="option-cn">合同</span></div></div>
+      <div class="option" data-val="Bank statement"><div class="option-box"></div><div class="option-text">Bank statements <span class="option-cn">银行流水</span></div></div>
+      <div class="option" data-val="Inventory data"><div class="option-box"></div><div class="option-text">Inventory data <span class="option-cn">库存数据</span></div></div>
+      <div class="option" data-val="Customer orders"><div class="option-box"></div><div class="option-text">Customer orders <span class="option-cn">客户订单</span></div></div>
+      <div class="option" data-val="Comms records"><div class="option-box"></div><div class="option-text">Business communication records <span class="option-cn">企业沟通记录</span></div></div>
+      <div class="option" data-val="Email attachments"><div class="option-box"></div><div class="option-text">Email attachments <span class="option-cn">邮件附件</span></div></div>
+      <div class="option" data-val="Multilingual docs"><div class="option-box"></div><div class="option-text">Multi-language documents <span class="option-cn">多语言文档</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
-    <div class="q-label">Q17</div>
-    <div class="q-text">If AI can run fully on-premise, would that increase your willingness to purchase?<br><span style="font-size:13px;color:var(--muted)">如果 AI 可以完全本地运行，是否会提高您的采购意愿？</span></div>
-    <div class="options radio" data-q="17" data-type="single">
-      <div class="option" data-val="Significantly increase"><div class="option-box"></div><div class="option-text">Significantly increase <span class="option-text-cn">显著提高</span></div></div>
-      <div class="option" data-val="Some impact"><div class="option-box"></div><div class="option-text">Some impact <span class="option-text-cn">有一定影响</span></div></div>
-      <div class="option" data-val="Minor impact"><div class="option-box"></div><div class="option-text">Minor impact <span class="option-text-cn">影响不大</span></div></div>
-      <div class="option" data-val="Not important"><div class="option-box"></div><div class="option-text">Not important <span class="option-text-cn">完全不重要</span></div></div>
+    <div class="q-label">Q15</div>
+    <div class="q-text">How many files or data records does your company process per day?<span class="q-cn">企业每天大约需要处理多少份文件或数据记录？</span></div>
+    <div class="options radio" data-q="15" data-type="single">
+      <div class="option" data-val="<50"><div class="option-box"></div><div class="option-text">Fewer than 50 <span class="option-cn">少于 50 份</span></div></div>
+      <div class="option" data-val="50-200"><div class="option-box"></div><div class="option-text">50 – 200</div></div>
+      <div class="option" data-val="200-1000"><div class="option-box"></div><div class="option-text">200 – 1,000</div></div>
+      <div class="option" data-val="1000+"><div class="option-box"></div><div class="option-text">More than 1,000 <span class="option-cn">1000 份以上</span></div></div>
     </div>
   </div>
 
-  <!-- Part 5 -->
-  <div class="part-heading">
-    <div class="part-num">5</div>
-    <h2>Interest in SkillMaster <span>对 SkillMaster 的兴趣度</span></h2>
-    <div class="part-divider"></div>
+  <div class="q-card">
+    <div class="q-label">Q16</div>
+    <div class="q-text">What are the most common issues with data and file handling? <span class="q-tag">(Select all that apply)</span><span class="q-cn">当前数据与文件处理最常见的问题是什么？（可多选）</span></div>
+    <div class="options" data-q="16" data-type="multi">
+      <div class="option" data-val="High labor cost"><div class="option-box"></div><div class="option-text">High labor cost <span class="option-cn">人工成本高</span></div></div>
+      <div class="option" data-val="Error prone"><div class="option-box"></div><div class="option-text">Data errors <span class="option-cn">数据容易出错</span></div></div>
+      <div class="option" data-val="Cant sync"><div class="option-box"></div><div class="option-text">Information cannot be synced <span class="option-cn">信息无法同步</span></div></div>
+      <div class="option" data-val="Slow response"><div class="option-box"></div><div class="option-text">Slow response time <span class="option-cn">响应速度慢</span></div></div>
+      <div class="option" data-val="Hard to find"><div class="option-box"></div><div class="option-text">Files hard to locate <span class="option-cn">文件难以查找</span></div></div>
+      <div class="option" data-val="Multilingual"><div class="option-box"></div><div class="option-text">Multilingual processing difficulty <span class="option-cn">多语言处理困难</span></div></div>
+      <div class="option" data-val="Messy process"><div class="option-box"></div><div class="option-text">Disorganized management process <span class="option-cn">管理流程混乱</span></div></div>
+      <div class="option" data-val="No platform"><div class="option-box"></div><div class="option-text">No unified platform <span class="option-cn">缺少统一平台</span></div></div>
+    </div>
   </div>
 
-  <div class="q-card" style="background: var(--accent-light); border-color: var(--teal-100);">
-    <div style="font-size:13px;color:var(--teal-600);font-weight:500;margin-bottom:10px;">About SkillMaster</div>
-    <p style="font-size:14px;color:var(--teal-800);line-height:1.65;margin-bottom:12px;">SkillMaster is an enterprise-grade <strong style="font-weight:500">on-premise private AI platform</strong> that supports:</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-      <div style="font-size:13px;color:var(--teal-800);display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);font-size:16px">✓</span> Local AI model execution</div>
-      <div style="font-size:13px;color:var(--teal-800);display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);font-size:16px">✓</span> Data never leaves your servers</div>
-      <div style="font-size:13px;color:var(--teal-800);display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);font-size:16px">✓</span> OCR & auto document archiving</div>
-      <div style="font-size:13px;color:var(--teal-800);display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);font-size:16px">✓</span> AI workflow automation</div>
-      <div style="font-size:13px;color:var(--teal-800);display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);font-size:16px">✓</span> Ready to use, no IT team needed</div>
-      <div style="font-size:13px;color:var(--teal-800);display:flex;align-items:center;gap:6px;"><span style="color:var(--accent);font-size:16px">✓</span> Teams / Slack / WeCom support</div>
+  <div class="part-heading"><div class="part-num">5</div><h2>Data Security & Private AI <span>数据安全与私有化 AI</span></h2><div class="part-divider"></div></div>
+
+  <div class="q-card">
+    <div class="q-label">Q17</div>
+    <div class="q-text">Does your company allow employees to upload client data to public cloud AI (e.g. ChatGPT)?<span class="q-cn">企业是否允许员工将客户资料上传到公有云 AI（如 ChatGPT）？</span></div>
+    <div class="options radio" data-q="17" data-type="single">
+      <div class="option" data-val="Fully allowed"><div class="option-box"></div><div class="option-text">Fully allowed <span class="option-cn">完全允许</span></div></div>
+      <div class="option" data-val="Partially allowed"><div class="option-box"></div><div class="option-text">Partially allowed <span class="option-cn">部分允许</span></div></div>
+      <div class="option" data-val="Prohibited"><div class="option-box"></div><div class="option-text">Explicitly prohibited <span class="option-cn">明确禁止</span></div></div>
+      <div class="option" data-val="No policy"><div class="option-box"></div><div class="option-text">No policy yet <span class="option-cn">尚无规定</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q18</div>
-    <div class="q-text">Which capabilities are most attractive to you? <em style="font-size:13px;color:var(--accent)">(Select top 3)</em><br><span style="font-size:13px;color:var(--muted)">以下哪些能力最吸引您？（请选择 TOP 3）</span></div>
-    <div class="q-hint">Select up to 3 options</div>
-    <div class="options" data-q="18" data-type="multi" data-max="3">
-      <div class="option" data-val="Private AI"><div class="option-box"></div><div class="option-text">Private AI <span class="option-text-cn">私有化 AI</span></div></div>
-      <div class="option" data-val="Local LLM"><div class="option-box"></div><div class="option-text">Local large language models <span class="option-text-cn">本地大模型</span></div></div>
-      <div class="option" data-val="Auto archiving"><div class="option-box"></div><div class="option-text">Document auto-archiving <span class="option-text-cn">文档自动归档</span></div></div>
-      <div class="option" data-val="OCR feature"><div class="option-box"></div><div class="option-text">OCR recognition <span class="option-text-cn">OCR 识别</span></div></div>
-      <div class="option" data-val="AI workflow"><div class="option-box"></div><div class="option-text">AI workflow automation <span class="option-text-cn">AI 工作流</span></div></div>
-      <div class="option" data-val="Auto reconciliation"><div class="option-box"></div><div class="option-text">Auto reconciliation <span class="option-text-cn">自动对账</span></div></div>
-      <div class="option" data-val="Resume screening"><div class="option-box"></div><div class="option-text">HR resume screening <span class="option-text-cn">HR 简历筛选</span></div></div>
-      <div class="option" data-val="Meeting notes AI"><div class="option-box"></div><div class="option-text">Meeting notes <span class="option-text-cn">会议纪要</span></div></div>
-      <div class="option" data-val="Multilingual AI"><div class="option-box"></div><div class="option-text">Multilingual processing <span class="option-text-cn">多语言处理</span></div></div>
-      <div class="option" data-val="Plug and play"><div class="option-box"></div><div class="option-text">Ready out of the box <span class="option-text-cn">开箱即用</span></div></div>
-      <div class="option" data-val="No IT needed"><div class="option-box"></div><div class="option-text">No IT team needed <span class="option-text-cn">不需要 IT 团队</span></div></div>
-      <div class="option" data-val="Local data security"><div class="option-box"></div><div class="option-text">Local data security <span class="option-text-cn">本地数据安全</span></div></div>
-    </div>
+    <div class="q-text">How concerned is your company about each of the following? <span class="q-tag">(1 = Not concerned, 5 = Very concerned)</span><span class="q-cn">企业对以下问题的担忧程度如何？（1 = 完全不担心，5 = 非常担心）</span></div>
+    <table class="rating-table">
+      <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+      <tbody>
+        <tr><td>Client data leakage <span class="option-cn">客户数据泄露</span></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Leakage" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Leakage" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Leakage" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Leakage" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Leakage" data-val="5"></div></td></tr>
+        <tr><td>AI training on company data <span class="option-cn">AI 使用企业数据训练</span></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Training" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Training" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Training" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Training" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Training" data-val="5"></div></td></tr>
+        <tr><td>File transmission risk <span class="option-cn">文件外传风险</span></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="FileRisk" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="FileRisk" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="FileRisk" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="FileRisk" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="FileRisk" data-val="5"></div></td></tr>
+        <tr><td>Compliance risk <span class="option-cn">合规风险</span></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Compliance" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Compliance" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Compliance" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Compliance" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="Compliance" data-val="5"></div></td></tr>
+        <tr><td>Cross-border data risk <span class="option-cn">跨境数据风险</span></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="CrossBorder" data-val="1"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="CrossBorder" data-val="2"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="CrossBorder" data-val="3"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="CrossBorder" data-val="4"></div></td><td class="rating-cell"><div class="rating-radio" data-q="18" data-row="CrossBorder" data-val="5"></div></td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q19</div>
-    <div class="q-text">What problems would you most want AI to solve first?<br><span style="font-size:13px;color:var(--muted)">您最希望 AI 优先帮助解决哪些问题？</span></div>
-    <textarea data-q="19" placeholder="Please describe your key pain points..." id="textarea-19"></textarea>
+    <div class="q-text">Which AI deployment model does your company prefer? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业更倾向哪种 AI 部署方式？（可多选）</span></div>
+    <div class="options" data-q="19" data-type="multi">
+      <div class="option" data-val="Public cloud SaaS"><div class="option-box"></div><div class="option-text">Public cloud SaaS <span class="option-cn">公有云 SaaS</span></div></div>
+      <div class="option" data-val="On-premise"><div class="option-box"></div><div class="option-text">On-premise private deployment <span class="option-cn">本地私有部署</span></div></div>
+      <div class="option" data-val="Hybrid"><div class="option-box"></div><div class="option-text">Hybrid deployment <span class="option-cn">混合部署</span></div></div>
+      <div class="option" data-val="Unsure"><div class="option-box"></div><div class="option-text">Not sure <span class="option-cn">不确定</span></div></div>
+    </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q20</div>
-    <div class="q-text">If you could trial the product for free within 1 week, would you be interested?<br><span style="font-size:13px;color:var(--muted)">如果可以在 1 周内快速试用，您是否愿意参与？</span></div>
+    <div class="q-text">If AI can run fully on-premise, would that increase your willingness to purchase?<span class="q-cn">如果 AI 可以完全本地运行，是否会提高您的采购意愿？</span></div>
     <div class="options radio" data-q="20" data-type="single">
-      <div class="option" data-val="Yes"><div class="option-box"></div><div class="option-text">Yes, I'm interested <span class="option-text-cn">愿意</span></div></div>
-      <div class="option" data-val="Maybe"><div class="option-box"></div><div class="option-text">Possibly <span class="option-text-cn">可能愿意</span></div></div>
-      <div class="option" data-val="No"><div class="option-box"></div><div class="option-text">Not at this time <span class="option-text-cn">暂不考虑</span></div></div>
+      <div class="option" data-val="Significantly increase"><div class="option-box"></div><div class="option-text">Significantly increase <span class="option-cn">显著提高</span></div></div>
+      <div class="option" data-val="Some impact"><div class="option-box"></div><div class="option-text">Some impact <span class="option-cn">有一定影响</span></div></div>
+      <div class="option" data-val="Minor impact"><div class="option-box"></div><div class="option-text">Minor impact <span class="option-cn">影响不大</span></div></div>
+      <div class="option" data-val="Not important"><div class="option-box"></div><div class="option-text">Not important <span class="option-cn">完全不重要</span></div></div>
     </div>
   </div>
 
-  <!-- Part 6 -->
-  <div class="part-heading">
-    <div class="part-num">6</div>
-    <h2>Purchasing & Budget <span>采购与预算</span></h2>
-    <div class="part-divider"></div>
-  </div>
+  <div class="part-heading"><div class="part-num">6</div><h2>AI Capability Preferences <span>企业对 AI 智能化能力的需求与偏好</span></h2><div class="part-divider"></div></div>
 
   <div class="q-card">
     <div class="q-label">Q21</div>
-    <div class="q-text">Who is most likely to drive AI purchasing decisions at your company?<br><span style="font-size:13px;color:var(--muted)">企业中谁最可能推动 AI 采购？</span></div>
-    <div class="options radio" data-q="21" data-type="single">
-      <div class="option" data-val="CEO/Founder"><div class="option-box"></div><div class="option-text">CEO / Founder</div></div>
-      <div class="option" data-val="CFO"><div class="option-box"></div><div class="option-text">CFO</div></div>
-      <div class="option" data-val="COO"><div class="option-box"></div><div class="option-text">COO</div></div>
-      <div class="option" data-val="IT Lead"><div class="option-box"></div><div class="option-text">IT Lead <span class="option-text-cn">IT 负责人</span></div></div>
-      <div class="option" data-val="Dept Head"><div class="option-box"></div><div class="option-text">Department Head <span class="option-text-cn">部门负责人</span></div></div>
-      <div class="option" data-val="Other-decision" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
+    <div class="q-text">Which AI capabilities would attract your attention most? <span class="q-tag">(Select top 3)</span><span class="q-cn">以下哪些 AI 能力，会更吸引您的关注？（请选择 TOP 3）</span></div>
+    <div class="q-hint">Select up to 3 options</div>
+    <div class="options" data-q="21" data-type="multi" data-max="3">
+      <div class="option" data-val="AI sales assistant"><div class="option-box"></div><div class="option-text">AI sales assistant <span class="option-cn">AI 销售助理</span></div></div>
+      <div class="option" data-val="CRM auto mgmt"><div class="option-box"></div><div class="option-text">CRM auto-management <span class="option-cn">CRM 自动管理</span></div></div>
+      <div class="option" data-val="Customer follow auto"><div class="option-box"></div><div class="option-text">Customer follow-up automation <span class="option-cn">客户跟进自动化</span></div></div>
+      <div class="option" data-val="Inventory coordination"><div class="option-box"></div><div class="option-text">Inventory management coordination <span class="option-cn">库存管理协同</span></div></div>
+      <div class="option" data-val="AI comms assistant"><div class="option-box"></div><div class="option-text">AI enterprise communication assistant <span class="option-cn">AI 企业沟通助手</span></div></div>
+      <div class="option" data-val="AI workflow auto"><div class="option-box"></div><div class="option-text">AI workflow automation <span class="option-cn">AI 工作流自动化</span></div></div>
+      <div class="option" data-val="Auto reports"><div class="option-box"></div><div class="option-text">Auto business report generation <span class="option-cn">自动生成业务报表</span></div></div>
+      <div class="option" data-val="Multi-sys sync"><div class="option-box"></div><div class="option-text">Multi-system data sync <span class="option-cn">多系统数据同步</span></div></div>
+      <div class="option" data-val="Private AI"><div class="option-box"></div><div class="option-text">On-premise private AI <span class="option-cn">本地私有化 AI</span></div></div>
+      <div class="option" data-val="AI knowledge"><div class="option-box"></div><div class="option-text">AI knowledge assistant <span class="option-cn">AI 知识助手</span></div></div>
+      <div class="option" data-val="Doc Excel AI"><div class="option-box"></div><div class="option-text">Auto document & Excel processing <span class="option-cn">自动处理文档与 Excel</span></div></div>
+      <div class="option" data-val="No IT needed"><div class="option-box"></div><div class="option-text">No IT team needed to deploy <span class="option-cn">不需要 IT 团队即可使用</span></div></div>
     </div>
-    <input type="text" class="other-input" id="other-21" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q22</div>
-    <div class="q-text">Which pricing model does your company prefer?<br><span style="font-size:13px;color:var(--muted)">企业更接受哪种 AI 付费方式？</span></div>
-    <div class="options radio" data-q="22" data-type="single">
-      <div class="option" data-val="One-time purchase"><div class="option-box"></div><div class="option-text">One-time purchase <span class="option-text-cn">一次性采购</span></div></div>
-      <div class="option" data-val="Annual subscription"><div class="option-box"></div><div class="option-text">Annual subscription <span class="option-text-cn">年费订阅</span></div></div>
-      <div class="option" data-val="Per user"><div class="option-box"></div><div class="option-text">Per user pricing <span class="option-text-cn">按用户收费</span></div></div>
-      <div class="option" data-val="Hardware lease"><div class="option-box"></div><div class="option-text">Hardware leasing <span class="option-text-cn">硬件租赁</span></div></div>
-      <div class="option" data-val="Usage based"><div class="option-box"></div><div class="option-text">Usage-based billing <span class="option-text-cn">按使用量收费</span></div></div>
+    <div class="q-text">If AI ran fully on-premise with data staying local, which data sources would you connect? <span class="q-tag">(Select all that apply)</span><span class="q-cn">如果 AI 系统支持本地私有化部署，您是否愿意让 AI 协同以下数据源？（可多选）</span></div>
+    <div class="options" data-q="22" data-type="multi">
+      <div class="option" data-val="CRM"><div class="option-box"></div><div class="option-text">CRM</div></div>
+      <div class="option" data-val="ERP"><div class="option-box"></div><div class="option-text">ERP</div></div>
+      <div class="option" data-val="Excel/Sheets"><div class="option-box"></div><div class="option-text">Excel / Google Sheets</div></div>
+      <div class="option" data-val="Comms platforms"><div class="option-box"></div><div class="option-text">Communication platforms (Teams / Slack / WeCom) <span class="option-cn">企业沟通平台</span></div></div>
+      <div class="option" data-val="Email"><div class="option-box"></div><div class="option-text">Email</div></div>
+      <div class="option" data-val="Inventory system"><div class="option-box"></div><div class="option-text">Inventory system <span class="option-cn">库存系统</span></div></div>
+      <div class="option" data-val="Google Drive"><div class="option-box"></div><div class="option-text">Google Drive</div></div>
+      <div class="option" data-val="SharePoint"><div class="option-box"></div><div class="option-text">SharePoint</div></div>
+      <div class="option" data-val="Finance system"><div class="option-box"></div><div class="option-text">Finance system <span class="option-cn">财务系统</span></div></div>
+      <div class="option" data-val="Not willing"><div class="option-box"></div><div class="option-text">Not willing to connect company data yet <span class="option-cn">暂不愿意连接企业数据</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q23</div>
-    <div class="q-text">What is your company's acceptable budget for an AI project?<br><span style="font-size:13px;color:var(--muted)">企业可接受的 AI 项目预算范围是？</span></div>
-    <div class="budget-section">
-      <div class="budget-title">🇸🇬 Singapore (SGD)</div>
-      <div class="options radio" data-q="23a" data-type="single">
-        <div class="option" data-val="<5k SGD"><div class="option-box"></div><div class="option-text">Less than SGD 5,000</div></div>
-        <div class="option" data-val="5k-20k SGD"><div class="option-box"></div><div class="option-text">SGD 5,000 – 20,000</div></div>
-        <div class="option" data-val="20k-50k SGD"><div class="option-box"></div><div class="option-text">SGD 20,000 – 50,000</div></div>
-        <div class="option" data-val="50k+ SGD"><div class="option-box"></div><div class="option-text">SGD 50,000+</div></div>
-      </div>
-    </div>
-    <div class="budget-section">
-      <div class="budget-title">🇲🇾 Malaysia (MYR)</div>
-      <div class="options radio" data-q="23b" data-type="single">
-        <div class="option" data-val="<20k MYR"><div class="option-box"></div><div class="option-text">Less than MYR 20,000</div></div>
-        <div class="option" data-val="20k-80k MYR"><div class="option-box"></div><div class="option-text">MYR 20,000 – 80,000</div></div>
-        <div class="option" data-val="80k-200k MYR"><div class="option-box"></div><div class="option-text">MYR 80,000 – 200,000</div></div>
-        <div class="option" data-val="200k+ MYR"><div class="option-box"></div><div class="option-text">MYR 200,000+</div></div>
-      </div>
+    <div class="q-text">Would you like AI to help with daily communication and collaboration? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业是否希望 AI 帮助处理日常沟通与协作？（可多选）</span></div>
+    <div class="options" data-q="23" data-type="multi">
+      <div class="option" data-val="Summarize chats"><div class="option-box"></div><div class="option-text">Auto-summarize chat content <span class="option-cn">自动总结聊天内容</span></div></div>
+      <div class="option" data-val="Follow-up reminders"><div class="option-box"></div><div class="option-text">Customer follow-up reminders <span class="option-cn">客户跟进提醒</span></div></div>
+      <div class="option" data-val="Auto reply"><div class="option-box"></div><div class="option-text">Auto-reply <span class="option-cn">自动回复</span></div></div>
+      <div class="option" data-val="Order sync"><div class="option-box"></div><div class="option-text">Order synchronization <span class="option-cn">订单同步</span></div></div>
+      <div class="option" data-val="Info archiving"><div class="option-box"></div><div class="option-text">Information archiving <span class="option-cn">信息归档</span></div></div>
+      <div class="option" data-val="Translation"><div class="option-box"></div><div class="option-text">Multilingual translation <span class="option-cn">多语言翻译</span></div></div>
+      <div class="option" data-val="Cross-platform"><div class="option-box"></div><div class="option-text">Cross-platform information consolidation <span class="option-cn">跨平台信息整合</span></div></div>
+      <div class="option" data-val="No need"><div class="option-box"></div><div class="option-text">No need currently <span class="option-cn">暂无需求</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q24</div>
-    <div class="q-text">What are the biggest barriers to AI adoption at your company? <em style="font-size:13px;color:var(--accent)">(Select all that apply)</em><br><span style="font-size:13px;color:var(--muted)">企业采购 AI 最大障碍是什么？（可多选）</span></div>
-    <div class="options" data-q="24" data-type="multi">
-      <div class="option" data-val="Unclear ROI"><div class="option-box"></div><div class="option-text">Unclear ROI <span class="option-text-cn">ROI 不明确</span></div></div>
-      <div class="option" data-val="Budget constraints"><div class="option-box"></div><div class="option-text">Budget constraints <span class="option-text-cn">预算不足</span></div></div>
-      <div class="option" data-val="Data security concerns"><div class="option-box"></div><div class="option-text">Data security concerns <span class="option-text-cn">数据安全担忧</span></div></div>
-      <div class="option" data-val="No internal champion"><div class="option-box"></div><div class="option-text">No one internally to drive it <span class="option-text-cn">内部没人推进</span></div></div>
-      <div class="option" data-val="Too complex"><div class="option-box"></div><div class="option-text">Too technically complex <span class="option-text-cn">技术太复杂</span></div></div>
-      <div class="option" data-val="Low staff acceptance"><div class="option-box"></div><div class="option-text">Low staff acceptance <span class="option-text-cn">员工接受度低</span></div></div>
-      <div class="option" data-val="Unsure of effectiveness"><div class="option-box"></div><div class="option-text">Unsure of effectiveness <span class="option-text-cn">不确定是否有效</span></div></div>
-      <div class="option" data-val="Other-barrier" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-text-cn">其他</span></div></div>
+    <div class="q-text">If a mature, secure and easy-to-deploy AI enterprise solution were available, would you be interested in learning more or trialing it?<span class="q-cn">如果未来有成熟、安全且易于部署的 AI 企业解决方案，您是否愿意进一步了解或参与试用？</span></div>
+    <div class="options radio" data-q="24" data-type="single">
+      <div class="option" data-val="Yes"><div class="option-box"></div><div class="option-text">Yes, I'm interested <span class="option-cn">愿意</span></div></div>
+      <div class="option" data-val="Maybe"><div class="option-box"></div><div class="option-text">Possibly <span class="option-cn">可能愿意</span></div></div>
+      <div class="option" data-val="No"><div class="option-box"></div><div class="option-text">Not at this time <span class="option-cn">暂不考虑</span></div></div>
     </div>
-    <input type="text" class="other-input" id="other-24" placeholder="Please specify...">
   </div>
 
-  <!-- Part 7 -->
-  <div class="part-heading">
-    <div class="part-num">7</div>
-    <h2>Open Questions <span>开放式问题</span></h2>
-    <div class="part-divider"></div>
-  </div>
+  <div class="part-heading"><div class="part-num">7</div><h2>Purchasing & Budget <span>采购与预算</span></h2><div class="part-divider"></div></div>
 
   <div class="q-card">
     <div class="q-label">Q25</div>
-    <div class="q-text">What do you see as the greatest value AI can bring to your business?<br><span style="font-size:13px;color:var(--muted)">您认为 AI 在企业中的最大价值是什么？</span></div>
-    <textarea data-q="25" placeholder="Share your thoughts..." id="textarea-25"></textarea>
+    <div class="q-text">Who is most likely to drive AI purchasing decisions at your company?<span class="q-cn">企业中谁最可能推动 AI 采购？</span></div>
+    <div class="options radio" data-q="25" data-type="single">
+      <div class="option" data-val="CEO/Founder"><div class="option-box"></div><div class="option-text">CEO / Founder <span class="option-cn">CEO / 创始人</span></div></div>
+      <div class="option" data-val="CFO"><div class="option-box"></div><div class="option-text">CFO</div></div>
+      <div class="option" data-val="COO"><div class="option-box"></div><div class="option-text">COO</div></div>
+      <div class="option" data-val="IT Lead"><div class="option-box"></div><div class="option-text">IT Lead <span class="option-cn">IT 负责人</span></div></div>
+      <div class="option" data-val="Dept Head"><div class="option-box"></div><div class="option-text">Department Head <span class="option-cn">部门负责人</span></div></div>
+      <div class="option" data-val="Other-decision" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
+    </div>
+    <input type="text" class="other-input" id="other-25" placeholder="Please specify...">
   </div>
 
   <div class="q-card">
     <div class="q-label">Q26</div>
-    <div class="q-text">What concerns you most about introducing AI into your business?<br><span style="font-size:13px;color:var(--muted)">您最担心 AI 带来的问题是什么？</span></div>
-    <textarea data-q="26" placeholder="Share your thoughts..." id="textarea-26"></textarea>
+    <div class="q-text">Which pricing model does your company prefer?<span class="q-cn">企业更接受哪种 AI 付费方式？</span></div>
+    <div class="options radio" data-q="26" data-type="single">
+      <div class="option" data-val="One-time"><div class="option-box"></div><div class="option-text">One-time purchase <span class="option-cn">一次性采购</span></div></div>
+      <div class="option" data-val="Annual subscription"><div class="option-box"></div><div class="option-text">Annual subscription <span class="option-cn">年费订阅</span></div></div>
+      <div class="option" data-val="Per user"><div class="option-box"></div><div class="option-text">Per user pricing <span class="option-cn">按用户收费</span></div></div>
+      <div class="option" data-val="Hardware lease"><div class="option-box"></div><div class="option-text">Hardware leasing <span class="option-cn">硬件租赁</span></div></div>
+      <div class="option" data-val="Usage based"><div class="option-box"></div><div class="option-text">Usage-based billing <span class="option-cn">按使用量收费</span></div></div>
+    </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q27</div>
-    <div class="q-text">If there was a plug-and-play, locally-run AI platform — what's the #1 problem you'd want it to solve?<br><span style="font-size:13px;color:var(--muted)">如果有一个"开箱即用、本地运行"的 AI 工作平台，您最希望它帮助您解决什么问题？</span></div>
-    <textarea data-q="27" placeholder="Share your thoughts..." id="textarea-27"></textarea>
+    <div class="q-text">What are the biggest barriers to AI adoption at your company? <span class="q-tag">(Select all that apply)</span><span class="q-cn">企业采购 AI 最大障碍是什么？（可多选）</span></div>
+    <div class="options" data-q="27" data-type="multi">
+      <div class="option" data-val="Unclear ROI"><div class="option-box"></div><div class="option-text">Unclear ROI <span class="option-cn">ROI 不明确</span></div></div>
+      <div class="option" data-val="Budget"><div class="option-box"></div><div class="option-text">Budget constraints <span class="option-cn">预算不足</span></div></div>
+      <div class="option" data-val="Data security"><div class="option-box"></div><div class="option-text">Data security concerns <span class="option-cn">数据安全担忧</span></div></div>
+      <div class="option" data-val="No champion"><div class="option-box"></div><div class="option-text">No internal champion to drive it <span class="option-cn">内部没人推进</span></div></div>
+      <div class="option" data-val="Too complex"><div class="option-box"></div><div class="option-text">Too technically complex <span class="option-cn">技术太复杂</span></div></div>
+      <div class="option" data-val="Low acceptance"><div class="option-box"></div><div class="option-text">Low staff acceptance <span class="option-cn">员工接受度低</span></div></div>
+      <div class="option" data-val="Unsure effective"><div class="option-box"></div><div class="option-text">Unsure of effectiveness <span class="option-cn">不确定是否有效</span></div></div>
+      <div class="option" data-val="Other-barrier" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
+    </div>
+    <input type="text" class="other-input" id="other-27" placeholder="Please specify...">
   </div>
 
-  <!-- Contact -->
+  <div class="part-heading"><div class="part-num">8</div><h2>Open Questions <span>开放式问题</span></h2><div class="part-divider"></div></div>
+
+  <div class="q-card">
+    <div class="q-label">Q28</div>
+    <div class="q-text">What do you see as the greatest value AI can bring to enterprise operations?<span class="q-cn">您认为 AI 在企业运营中的最大价值是什么？</span></div>
+    <textarea data-q="28" placeholder="Share your thoughts..."></textarea>
+  </div>
+
+  <div class="q-card">
+    <div class="q-label">Q29</div>
+    <div class="q-text">What's the #1 problem you'd most like AI to help solve first?<span class="q-cn">您最希望 AI 优先帮助企业解决什么问题？</span></div>
+    <textarea data-q="29" placeholder="Share your thoughts..."></textarea>
+  </div>
+
+  <div class="q-card">
+    <div class="q-label">Q30</div>
+    <div class="q-text">What concerns you most about introducing AI into your business?<span class="q-cn">您最担心 AI 带来的问题是什么？</span></div>
+    <textarea data-q="30" placeholder="Share your thoughts..."></textarea>
+  </div>
+
   <div class="contact-card">
     <h3>Stay in touch</h3>
-    <p>If you'd like to participate in a product trial or in-depth interview, please share your contact details below. (Optional)</p>
-    <label class="input-label">Full Name</label>
+    <p>If you'd like to participate in further discussions or an in-depth interview, please leave your contact details. (Optional)<br><span style="font-size:12px;opacity:0.7">如果您愿意进一步参与后续交流或深度访谈，请留下以下信息。</span></p>
+    <label class="input-label">Full Name 姓名</label>
     <input type="text" id="contact-name" placeholder="Your name">
-    <label class="input-label">Company</label>
+    <label class="input-label">Company 公司</label>
     <input type="text" id="contact-company" placeholder="Company name">
-    <label class="input-label">Title / Role</label>
-    <input type="text" id="contact-title" placeholder="Your role">
-    <label class="input-label">Email</label>
+    <label class="input-label">Email 邮箱</label>
     <input type="text" id="contact-email" placeholder="your@email.com">
-    <label class="input-label">WhatsApp / Phone</label>
-    <input type="text" id="contact-phone" placeholder="+65 / +60 ...">
+    <input type="text" id="contact-title" style="display:none">
+    <input type="text" id="contact-phone" style="display:none">
   </div>
 
   <div class="submit-wrap">
     <button class="submit-btn" onclick="submitSurvey()">Submit Survey →</button>
-    <p class="submit-note">All responses are confidential and used for market research only.<br>感谢您的参与！</p>
+    <p class="submit-note">All responses are confidential and used for market research only.<br>所有信息仅用于市场研究分析，不会对外公开。</p>
   </div>
-
 </div>
 
-<!-- Success screen -->
 <div class="success-screen" id="successScreen">
   <div class="success-icon">✓</div>
   <h2>Thank you!</h2>
@@ -984,55 +566,52 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-const answers = {};
-const totalQ = 27;
+const answers={};
+const totalQ=30;
+const SHEET_URL='https://script.google.com/macros/s/AKfycbxs16ThD7Zw4pN72f7lDPzktEFzAUgEUUz846-IRaf9_XWWQdeVoVBLRHvkN57T3x2hJA/exec';
+const EMAILJS_SERVICE='service_boywe4i';
+const EMAILJS_TEMPLATE='713g06k';
+const EMAILJS_PUBLIC_KEY='4g7PGSKZ3Ej9tsQRO';
 
-function updateProgress() {
-  const answered = Object.keys(answers).filter(k => {
-    const v = answers[k];
-    if (Array.isArray(v)) return v.length > 0;
-    if (typeof v === 'string') return v.trim().length > 0;
-    if (typeof v === 'object' && v !== null) return Object.keys(v).length > 0;
-    return !!v;
+function updateProgress(){
+  const answered=Object.keys(answers).filter(k=>{
+    const v=answers[k];
+    if(Array.isArray(v))return v.length>0;
+    if(typeof v==='string')return v.trim().length>0;
+    if(typeof v==='object'&&v!==null)return Object.keys(v).length>0;
+    return!!v;
   }).length;
-  const pct = Math.round((answered / totalQ) * 100);
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = answered + ' / ' + totalQ;
+  const pct=Math.round((answered/totalQ)*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressLabel').textContent=answered+' / '+totalQ;
 }
 
-// Single/multi select
-document.querySelectorAll('.options').forEach(group => {
-  const qId = group.dataset.q;
-  const type = group.dataset.type;
-  const maxSel = group.dataset.max ? parseInt(group.dataset.max) : 999;
-
-  group.querySelectorAll('.option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      const val = opt.dataset.val;
-      const isOther = opt.dataset.other === 'true';
-      const otherId = 'other-' + qId;
-      const otherEl = document.getElementById(otherId);
-
-      if (type === 'single') {
-        group.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+document.querySelectorAll('.options').forEach(group=>{
+  const qId=group.dataset.q;
+  const type=group.dataset.type;
+  const maxSel=group.dataset.max?parseInt(group.dataset.max):999;
+  group.querySelectorAll('.option').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      const val=opt.dataset.val;
+      const isOther=opt.dataset.other==='true';
+      const otherEl=document.getElementById('other-'+qId);
+      if(type==='single'){
+        group.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
         opt.classList.add('selected');
-        answers[qId] = val;
-        if (isOther && otherEl) otherEl.style.display = 'block';
-        else if (otherEl) otherEl.style.display = 'none';
-
-      } else {
-        if (opt.classList.contains('selected')) {
+        answers[qId]=val;
+        if(otherEl)otherEl.style.display=isOther?'block':'none';
+      }else{
+        if(opt.classList.contains('selected')){
           opt.classList.remove('selected');
-          if (!answers[qId]) answers[qId] = [];
-          answers[qId] = answers[qId].filter(v => v !== val);
-          if (isOther && otherEl) otherEl.style.display = 'none';
-        } else {
-          const selected = group.querySelectorAll('.option.selected').length;
-          if (selected >= maxSel) return;
+          if(!answers[qId])answers[qId]=[];
+          answers[qId]=answers[qId].filter(v=>v!==val);
+          if(isOther&&otherEl)otherEl.style.display='none';
+        }else{
+          if(group.querySelectorAll('.option.selected').length>=maxSel)return;
           opt.classList.add('selected');
-          if (!answers[qId]) answers[qId] = [];
+          if(!answers[qId])answers[qId]=[];
           answers[qId].push(val);
-          if (isOther && otherEl) otherEl.style.display = 'block';
+          if(isOther&&otherEl)otherEl.style.display='block';
         }
       }
       updateProgress();
@@ -1040,92 +619,54 @@ document.querySelectorAll('.options').forEach(group => {
   });
 });
 
-// Rating table
-document.querySelectorAll('.rating-radio').forEach(radio => {
-  radio.addEventListener('click', () => {
-    const row = radio.dataset.row;
-    const val = radio.dataset.val;
-    const table = radio.closest('table');
-    table.querySelectorAll('.rating-radio[data-row="' + row + '"]').forEach(r => r.classList.remove('selected'));
+document.querySelectorAll('.rating-radio').forEach(radio=>{
+  radio.addEventListener('click',()=>{
+    const qId=radio.dataset.q;
+    const row=radio.dataset.row;
+    const val=radio.dataset.val;
+    document.querySelectorAll('.rating-radio[data-q="'+qId+'"][data-row="'+row+'"]').forEach(r=>r.classList.remove('selected'));
     radio.classList.add('selected');
-    if (!answers['15']) answers['15'] = {};
-    answers['15'][row] = val;
+    if(!answers[qId])answers[qId]={};
+    answers[qId][row]=val;
     updateProgress();
   });
 });
 
-// Textareas
-document.querySelectorAll('textarea').forEach(ta => {
-  ta.addEventListener('input', () => {
-    answers[ta.dataset.q] = ta.value;
-    updateProgress();
-  });
+document.querySelectorAll('textarea').forEach(ta=>{
+  ta.addEventListener('input',()=>{answers[ta.dataset.q]=ta.value;updateProgress();});
 });
 
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxs16ThD7Zw4pN72f7lDPzktEFzAUgEUUz846-IRaf9_XWWQdeVoVBLRHvkN57T3x2hJA/exec';
-const EMAILJS_SERVICE = 'service_boywe4i';
-const EMAILJS_TEMPLATE = '713g06k';
-const EMAILJS_PUBLIC_KEY = '4g7PGSKZ3Ej9tsQRO';
-
-function submitSurvey() {
-  const btn = document.querySelector('.submit-btn');
-  btn.textContent = 'Submitting...';
-  btn.disabled = true;
-
-  answers['contact'] = {
-    name: document.getElementById('contact-name').value,
-    company: document.getElementById('contact-company').value,
-    title: document.getElementById('contact-title').value,
-    email: document.getElementById('contact-email').value,
-    phone: document.getElementById('contact-phone').value
+function submitSurvey(){
+  const btn=document.querySelector('.submit-btn');
+  btn.textContent='Submitting...';
+  btn.disabled=true;
+  answers['contact']={
+    name:document.getElementById('contact-name').value,
+    company:document.getElementById('contact-company').value,
+    title:document.getElementById('contact-title').value,
+    email:document.getElementById('contact-email').value,
+    phone:document.getElementById('contact-phone').value
   };
-  answers['submitted_at'] = new Date().toISOString();
+  answers['submitted_at']=new Date().toISOString();
+  const c=answers['contact'];
 
-  const contact = answers['contact'];
-
-  // 1. Send to Google Sheet
-  const sheetPromise = fetch(SHEET_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(answers)
-  }).catch(e => console.warn('Sheet error:', e));
-
-  // 2. Send email via EmailJS
-  const msgLines = [
-    '新问卷提交通知',
-    '',
-    '姓名：' + (contact.name || '-'),
-    '公司：' + (contact.company || '-'),
-    '职位：' + (contact.title || '-'),
-    '邮箱：' + (contact.email || '-'),
-    'WhatsApp：' + (contact.phone || '-'),
-    '提交时间：' + answers['submitted_at'],
-    '',
-    'Q1 国家/地区：' + (answers['1'] || '-'),
-    'Q3 员工规模：' + (answers['3'] || '-'),
-    'Q5 AI投入：' + (answers['5'] || '-'),
-    'Q16 部署偏好：' + (answers['16'] || '-'),
-    'Q20 试用意向：' + (answers['20'] || '-'),
-    '',
-    '完整数据请查看 Google Sheet。'
-  ];
+  fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(answers)}).catch(e=>console.warn('Sheet:',e));
 
   emailjs.init(EMAILJS_PUBLIC_KEY);
-  const emailPromise = emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
-    name: contact.name || 'Anonymous',
-    email: contact.email || 'no-reply@survey.com',
-    company: contact.company || 'Unknown',
-    message: msgLines.join('\n'),
-    time: answers['submitted_at']
-  }).catch(e => console.warn('Email error:', e));
+  emailjs.send(EMAILJS_SERVICE,EMAILJS_TEMPLATE,{
+    name:c.name||'Anonymous',
+    email:c.email||'no-reply@survey.com',
+    company:c.company||'Unknown',
+    message:'New submission\n\nName: '+(c.name||'-')+'\nCompany: '+(c.company||'-')+'\nTitle: '+(c.title||'-')+'\nEmail: '+(c.email||'-')+'\nPhone: '+(c.phone||'-')+'\nTime: '+answers['submitted_at']+'\n\nQ1: '+(answers['1']||'-')+'\nQ3: '+(answers['3']||'-')+'\nQ5: '+(answers['5']||'-')+'\nQ24: '+(answers['24']||'-')+'\n\nView full data in Google Sheet.',
+    time:answers['submitted_at']
+  }).catch(e=>console.warn('Email:',e));
 
-  Promise.allSettled([sheetPromise, emailPromise]).then(() => {
-    document.getElementById('surveyBody').style.display = 'none';
-    document.getElementById('successScreen').style.display = 'block';
-    document.querySelector('.progress-bar').style.display = 'none';
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
+  setTimeout(()=>{
+    document.getElementById('surveyBody').style.display='none';
+    document.getElementById('successScreen').style.display='block';
+    document.querySelector('.progress-bar').style.display='none';
+    window.scrollTo({top:0,behavior:'smooth'});
+  },1500);
 }
 </script>
 </body>

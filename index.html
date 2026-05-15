@@ -649,11 +649,18 @@ const requiredQuestions=[
   {id:'28',type:'text'},{id:'29',type:'text'},{id:'30',type:'text'}
 ];
 
+// Rating row counts: q12 has 7 rows, q18 has 5 rows
+const ratingRowCount={'12':7,'18':5};
+
 function isAnswered(q){
   const v=answers[q.id];
   if(q.type==='single') return !!v;
   if(q.type==='multi') return Array.isArray(v)&&v.length>0;
-  if(q.type==='rating') return typeof v==='object'&&v!==null&&Object.keys(v).length>0;
+  if(q.type==='rating'){
+    if(typeof v!=='object'||v===null) return false;
+    const required=ratingRowCount[q.id]||1;
+    return Object.keys(v).length>=required;
+  }
   if(q.type==='text') return typeof v==='string'&&v.trim().length>0;
   return false;
 }

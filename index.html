@@ -95,13 +95,13 @@
   <div class="hero-meta">
     <span>5–8 minutes</span>
     <span>Confidential</span>
-    <span>18 questions</span>
+    <span>19 questions</span>
   </div>
 </div>
 
 <div class="progress-bar">
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <div class="progress-label" id="progressLabel">0 / 18</div>
+  <div class="progress-label" id="progressLabel">0 / 19</div>
 </div>
 
 <div class="survey-body" id="surveyBody">
@@ -355,7 +355,7 @@
 
   <div class="q-card">
     <div class="q-label">Q16</div>
-    <div class="q-text">Which of the following built-in AI agents would most influence your decision to adopt SkillMaster? <span class="q-tag">(Select top 3)</span><span class="q-cn">以下哪些内置 AI 智能体最能影响您的采购决策？（请选择 TOP 3）</span></div>
+    <div class="q-text">Which AI agents would you most want the SkillMaster All-in-One to come pre-built with? <span class="q-tag">(Select top 3)</span><span class="q-cn">您最希望 SkillMaster 一体机内置哪些 AI 智能体？（请选择 TOP 3）</span></div>
     <div class="q-hint">Select up to 3 options</div>
     <div class="options" data-q="16" data-type="multi" data-max="3">
       <div class="option" data-val="Doc Archive Agent"><div class="option-box"></div><div class="option-text">Smart Document Archiving — auto-classify, extract &amp; organize files (contracts, invoices, reports) <span class="option-cn">智能文档归档 — 自动分类、提取与整理合同、发票、报告等文件</span></div></div>
@@ -368,13 +368,12 @@
       <div class="option" data-val="Multi-lang Agent"><div class="option-box"></div><div class="option-text">Multilingual Translation — real-time translation across EN / ZH / BM / TH for docs &amp; comms <span class="option-cn">多语言翻译 — 文档与沟通的中英马泰实时互译</span></div></div>
       <div class="option" data-val="Workflow Agent"><div class="option-box"></div><div class="option-text">Workflow Automation — connect systems (CRM / ERP / inventory) &amp; automate repetitive tasks <span class="option-cn">工作流自动化 — 打通 CRM / ERP / 库存系统，自动执行重复任务</span></div></div>
       <div class="option" data-val="Inventory Agent"><div class="option-box"></div><div class="option-text">Inventory &amp; Order Sync — real-time inventory updates, order tracking &amp; procurement alerts <span class="option-cn">库存订单同步 — 实时库存更新、订单追踪与采购预警</span></div></div>
-      <div class="option" data-val="No IT needed"><div class="option-box"></div><div class="option-text">Easy Deployment (No IT team needed) — ready in 30 min, plug-and-play with existing tools <span class="option-cn">极简部署（无需 IT 团队）— 30 分钟上线，兼容现有工具</span></div></div>
     </div>
   </div>
 
   <div class="q-card">
     <div class="q-label">Q17</div>
-    <div class="q-text">What annual budget range would your company consider acceptable for SkillMaster?<span class="q-cn">贵企业可接受的年度预算区间是？</span></div>
+    <div class="q-text">What is your company's acceptable annual budget for the SkillMaster All-in-One?<span class="q-cn">贵企业对 SkillMaster 一体机可接受的年度预算区间是？</span></div>
     <div class="options radio two-col" data-q="17" data-type="single">
       <div class="option" data-val="Under 2k"><div class="option-box"></div><div class="option-text">Under USD 2,000 / year <span class="option-cn">低于 2,000 美元/年</span></div></div>
       <div class="option" data-val="2k-5k"><div class="option-box"></div><div class="option-text">USD 2,000 – 5,000 / year <span class="option-cn">2,000 – 5,000 美元/年</span></div></div>
@@ -387,8 +386,22 @@
 
   <div class="q-card">
     <div class="q-label">Q18</div>
-    <div class="q-text">Who is most likely to drive the purchasing decision for an AI solution like SkillMaster at your company?<span class="q-cn">在贵企业中，谁最可能推动像 SkillMaster 这样的 AI 解决方案的采购决策？</span></div>
-    <div class="options radio two-col" data-q="18" data-type="single">
+    <div class="q-text">Which procurement model would your company prefer for the SkillMaster All-in-One? <span class="q-tag">(Select all that apply)</span><span class="q-cn">贵企业倾向于以哪种方式采购 SkillMaster 一体机？（可多选）</span></div>
+    <div class="options two-col" data-q="18" data-type="multi">
+      <div class="option" data-val="Monthly lease"><div class="option-box"></div><div class="option-text">Leasing — monthly payments <span class="option-cn">租赁 — 按月付款</span></div></div>
+      <div class="option" data-val="Quarterly lease"><div class="option-box"></div><div class="option-text">Leasing — quarterly payments <span class="option-cn">租赁 — 按季付款</span></div></div>
+      <div class="option" data-val="Annual lease"><div class="option-box"></div><div class="option-text">Leasing — annual payments <span class="option-cn">租赁 — 按年付款</span></div></div>
+      <div class="option" data-val="Outright purchase"><div class="option-box"></div><div class="option-text">Outright purchase (one-time) <span class="option-cn">全款购买（一次性）</span></div></div>
+      <div class="option" data-val="Subscription SaaS"><div class="option-box"></div><div class="option-text">Software subscription + hardware purchase <span class="option-cn">软件订阅 + 硬件购买</span></div></div>
+      <div class="option" data-val="Other-procurement" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
+    </div>
+    <input type="text" class="other-input" id="other-18" placeholder="Please specify...">
+  </div>
+
+  <div class="q-card">
+    <div class="q-label">Q19</div>
+    <div class="q-text">Who is most likely to drive the purchasing decision for the SkillMaster All-in-One at your company?<span class="q-cn">在贵企业中，谁最可能推动 SkillMaster 一体机的采购决策？</span></div>
+    <div class="options radio two-col" data-q="19" data-type="single">
       <div class="option" data-val="CEO/Founder"><div class="option-box"></div><div class="option-text">CEO / Founder <span class="option-cn">CEO / 创始人</span></div></div>
       <div class="option" data-val="CFO"><div class="option-box"></div><div class="option-text">CFO</div></div>
       <div class="option" data-val="COO"><div class="option-box"></div><div class="option-text">COO</div></div>
@@ -396,7 +409,7 @@
       <div class="option" data-val="Dept Head"><div class="option-box"></div><div class="option-text">Department Head <span class="option-cn">部门负责人</span></div></div>
       <div class="option" data-val="Other-decision" data-other="true"><div class="option-box"></div><div class="option-text">Others <span class="option-cn">其他</span></div></div>
     </div>
-    <input type="text" class="other-input" id="other-18" placeholder="Please specify...">
+    <input type="text" class="other-input" id="other-19" placeholder="Please specify...">
   </div>
 
   <div class="contact-card">
@@ -426,7 +439,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 const answers={};
-const totalQ=18;
+const totalQ=19;
 const SHEET_URL='https://script.google.com/macros/s/AKfycbxs16ThD7Zw4pN72f7lDPzktEFzAUgEUUz846-IRaf9_XWWQdeVoVBLRHvkN57T3x2hJA/exec';
 const EMAILJS_SERVICE='service_boywe4i';
 const EMAILJS_TEMPLATE='713g06k';
@@ -502,7 +515,7 @@ const requiredQuestions=[
   {id:'10',type:'multi'},{id:'11',type:'rating'},
   {id:'12',type:'multi'},{id:'13',type:'multi'},
   {id:'14',type:'multi'},{id:'15',type:'multi'},
-  {id:'16',type:'multi'},{id:'17',type:'single'},{id:'18',type:'single'}
+  {id:'16',type:'multi'},{id:'17',type:'single'},{id:'18',type:'multi'},{id:'19',type:'single'}
 ];
 
 // Rating row counts: q11 has 7 rows
